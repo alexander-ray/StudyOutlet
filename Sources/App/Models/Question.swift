@@ -15,11 +15,11 @@ struct Question: Model {
     
     // Initialize values
     init(question: Data, solution: Data, answer: String, subject: String, topic: String) {
-            self.question = question
-            self.solution = solution
-            self.answer = answer
-            self.subject = subject
-            self.topic = topic
+        self.question = question
+        self.solution = solution
+        self.answer = answer
+        self.subject = subject
+        self.topic = topic
     }
     
     // Getting data from database
