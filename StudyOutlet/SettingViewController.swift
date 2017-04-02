@@ -27,10 +27,10 @@ class SettingViewController: UIViewController
         
         let calendar = Calendar.current
         let currentDate = Date()
-        let year  = calendar.component(.year, from: currentDate) - Int(Input_year.text!)!
-        let month = calendar.component(.month, from: currentDate) - Int(Input_month.text!)!
-        let day = calendar.component(.day, from: currentDate) - Int(Input_day.text!)!
-        dDate = -(year * 365 + month * 30 + day)
+        let year  = Int(Input_year.text!)! - calendar.component(.year, from: currentDate)
+        let month = Int(Input_month.text!)! - calendar.component(.month, from: currentDate)
+        let day   = Int(Input_day.text!)! - calendar.component(.day, from: currentDate)
+        dDate = year * 365 + month * 30 + day
     }
     
     override func viewDidLoad() {
