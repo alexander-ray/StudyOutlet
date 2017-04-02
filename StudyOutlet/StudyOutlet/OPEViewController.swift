@@ -10,10 +10,13 @@ import UIKit
 
 class OPEViewController: UIViewController {
 
+    @IBOutlet weak var CountDown: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        CountDown.text = String(dDate) + " Days Until next Test"
     }
 
     override func didReceiveMemoryWarning() {
