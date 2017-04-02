@@ -15,6 +15,7 @@ class SettingViewController: UIViewController
     @IBOutlet weak var Input_month: UITextField!
     @IBOutlet weak var Input_day: UITextField!
     
+    @IBOutlet weak var CountDown: UILabel!
     
     @IBAction func UpdateDate(_ sender: AnyObject)
     {
@@ -31,6 +32,8 @@ class SettingViewController: UIViewController
         let month = Int(Input_month.text!)! - calendar.component(.month, from: currentDate)
         let day   = Int(Input_day.text!)! - calendar.component(.day, from: currentDate)
         dDate = year * 365 + month * 30 + day
+        
+        CountDown.text = String(dDate) + " Days Until next Test"
     }
     
     override func viewDidLoad() {

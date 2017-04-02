@@ -311,6 +311,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="CountDown" destination="v1F-PN-sdD" id="cwX-hz-258"/>
                         <outlet property="Input_day" destination="shf-gB-1NQ" id="PDq-Vk-Bd5"/>
                         <outlet property="Input_month" destination="rZl-Bj-dkh" id="e4l-AO-SgA"/>
                         <outlet property="Input_year" destination="9mx-su-fye" id="Fw3-Js-MfA"/>
