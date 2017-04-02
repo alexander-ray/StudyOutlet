@@ -2,9 +2,9 @@ import Vapor
 import VaporMySQL
 
 let drop = Droplet()
-drop.preparations.append(Question.self)
+//drop.preparations.append(Question.self)
 
-try drop.addProvider(VaporMySQL.Provider.self)
+//try drop.addProvider(VaporMySQL.Provider.self)
 
 drop.get("hello") { request in
     let name = request.data["name"]?.string ?? "stranger"
@@ -14,10 +14,10 @@ drop.get("hello") { request in
     ])
 }
 
-drop.post("question") { req in
+/*drop.post("question") { req in
     var question = try Question(node: req.json)
     try question.save()
     return try question.makeJSON()
-}
+}*/
 
 drop.run()
