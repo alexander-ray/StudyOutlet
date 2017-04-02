@@ -13,6 +13,8 @@ struct Question: Model {
     let subject: String
     let topic: String
     
+    var exists: Bool = false
+
     // Initialize values
     init(question: Data, solution: Data, answer: String, subject: String, topic: String) {
         self.question = question
