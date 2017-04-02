@@ -1,0 +1,9 @@
+{
+    //"host": "us-cdbr-iron-east-03.cleardb.net",
+    //"user": "b1ac1b8b594a5c",
+    //"password": "37247c94",
+    //"database": "heroku_0f1b358c2e1c085",
+    //"port": "3306",
+    "url": "mysql://b1ac1b8b594a5c:37247c94@us-cdbr-iron-east-03.cleardb.net/heroku_0f1b358c2e1c085",
+    "encoding": "utf8"
+}
