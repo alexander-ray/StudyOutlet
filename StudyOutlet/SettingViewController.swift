@@ -19,13 +19,6 @@ class SettingViewController: UIViewController
     
     @IBAction func UpdateDate(_ sender: AnyObject)
     {
-//        var dateComponents = DateComponents()
-//        dateComponents.year = Int(Input_year.text!)
-//        dateComponents.month = Int(Input_month.text!)
-//        dateComponents.day = Int(Input_month.text!)
-        
-//        let examDate = calendar.date(from: dateComponents)
-        
         let calendar = Calendar.current
         let currentDate = Date()
         let year  = Int(Input_year.text!)! - calendar.component(.year, from: currentDate)
