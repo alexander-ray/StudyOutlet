@@ -3,7 +3,7 @@ import Fluent
 import Foundation
 
 // Model for a question
-final class Question: Model {
+struct Question: Model {
     // Fields from database to fully represent question
     var id: Node? // Identifier to comform to model
     // Data to deal with Blob type
@@ -14,8 +14,7 @@ final class Question: Model {
     let topic: String
     
     // Initialize values
-    init(id: Node?, question: Data, solution: Data, answer: String, subject: String, topic: String) {
-            self.id = id
+    init(question: Data, solution: Data, answer: String, subject: String, topic: String) {
             self.question = question
             self.solution = solution
             self.answer = answer
