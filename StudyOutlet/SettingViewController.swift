@@ -15,15 +15,23 @@ class SettingViewController: UIViewController
     @IBOutlet weak var Input_month: UITextField!
     @IBOutlet weak var Input_day: UITextField!
     
-//    var firstCellPhoneCallDateComponents = DateComponents()
-//    firstCellPhoneCallDateComponents.year = 1973
-//    firstCellPhoneCallDateComponents.month = 4
-//    firstCellPhoneCallDateComponents.day = 3
-//    
-//    let firstCellPhoneCallDate = userCalendar.date(from: firstCellPhoneCallDateComponents)!
-//    firstCellPhoneCallDate.timeIntervalSinceReferenceDate
     
-    
+    @IBAction func UpdateDate(_ sender: AnyObject)
+    {
+//        var dateComponents = DateComponents()
+//        dateComponents.year = Int(Input_year.text!)
+//        dateComponents.month = Int(Input_month.text!)
+//        dateComponents.day = Int(Input_month.text!)
+        
+//        let examDate = calendar.date(from: dateComponents)
+        
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let year  = calendar.component(.year, from: currentDate) - Int(Input_year.text!)!
+        let month = calendar.component(.month, from: currentDate) - Int(Input_month.text!)!
+        let day = calendar.component(.day, from: currentDate) - Int(Input_day.text!)!
+        dDate = -(year * 365 + month * 30 + day)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
