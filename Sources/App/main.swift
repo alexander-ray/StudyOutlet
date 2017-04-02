@@ -4,7 +4,7 @@ import VaporMySQL
 let drop = Droplet()
 drop.preparations.append(Question.self)
 
-try drop.addProvider(VaporMySQL.Provider.self)
+//try drop.addProvider(VaporMySQL.Provider.self)
 
 drop.get("hello") { request in
     let name = request.data["name"]?.string ?? "stranger"
