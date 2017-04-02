@@ -14,10 +14,10 @@ drop.get("hello") { request in
     ])
 }
 
-/*drop.post("question") { req in
+drop.post("question") { req in
     var question = try Question(node: req.json)
     try question.save()
     return try question.makeJSON()
-}*/
+}
 
 drop.run()
