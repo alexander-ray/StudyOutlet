@@ -33,6 +33,7 @@ class SettingViewController: UIViewController
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        CountDown.text = String(dDate) + " Days Until next Test"
     }
 
     override func didReceiveMemoryWarning() {
