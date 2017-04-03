@@ -130,7 +130,7 @@
     {
       "package": "VaporMySQL",
       "reason": null,
-      "repositoryURL": "https://github.com/vapor/mysql-provider",
+      "repositoryURL": "https://github.com/vapor/mysql-provider.git",
       "version": "1.0.0"
     }
   ],
