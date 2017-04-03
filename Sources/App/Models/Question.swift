@@ -7,7 +7,7 @@ struct Question: Model {
     // Fields from database to fully represent question
     var id: Node? // Identifier to comform to model
     // Data to deal with Blob type
-    let question: Data
+    let question: String
     let solution: Data
     let answer: String
     let subject: String
@@ -16,7 +16,7 @@ struct Question: Model {
     var exists: Bool = false
 
     // Initialize values
-    init(question: Data, solution: Data, answer: String, subject: String, topic: String) {
+    init(question: String, solution: Data, answer: String, subject: String, topic: String) {
         self.question = question
         self.solution = solution
         self.answer = answer
@@ -27,7 +27,8 @@ struct Question: Model {
     // Getting data from database
     init(node: Node, in context: Context) throws {
         id = try node.extract("id")
-        question = try node.extract("question", transform: Question.stringToData)
+        question = try node.extract("question")
+        //question = try node.extract("question", transform: Question.stringToData)
         solution = try node.extract("solution", transform: Question.stringToData)
         answer = try node.extract("answer")
         subject = try node.extract("subject")
@@ -40,7 +41,8 @@ struct Question: Model {
         return try Node(node: [
             "id": id,
             // Node data type can only use strings, ints, etc
-            "question": Question.dataToString(question),
+            "question": question,
+            //"question": question,
             "solution": Question.dataToString(solution),
             "answer": answer,
             "subject": subject,
@@ -54,7 +56,7 @@ struct Question: Model {
         try database.create("questions") { questions in
             questions.id()
             questions.data("question")
-            questions.string("solution")
+            questions.data("solution")
             questions.string("answer")
             questions.string("subject")
             questions.string("topic")
@@ -70,7 +72,7 @@ extension Question {
     // Data to string is valid conversion
     // Data just sequence of bytes
     static func dataToString(_ data: Data) -> String {
-        return String(data: data, encoding: String.Encoding.utf8)!
+        return String(data: data, encoding: .utf8)!
     }
     static func stringToData(_ dataString: String) -> Data {
         return dataString.data(using: .utf8)!
