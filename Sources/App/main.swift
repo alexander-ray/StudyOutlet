@@ -5,6 +5,7 @@ let drop = Droplet()
 try drop.addProvider(VaporMySQL.Provider.self)
 
 drop.preparations.append(Question.self)
+drop.preparations.append(User.self)
 
 drop.get("hello") { request in
     let name = request.data["name"]?.string ?? "stranger"
@@ -14,6 +15,14 @@ drop.get("hello") { request in
     ])
 }
 
+// MARK: - User routes
+drop.post("user") {req in
+    var user = try User(node: req.json)
+    try user.save()
+    return user.username
+}
+
+// MARK: - Question routes
 // Create new question
 drop.post("question") { req in
     var question = try Question(node: req.json)

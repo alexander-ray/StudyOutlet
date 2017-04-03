@@ -8,6 +8,8 @@ struct User: Model {
     let username: String
     let password: String
     
+    var exists: Bool = false
+    
     init(username: String, password: String){
         self.username = username
         self.password = password
