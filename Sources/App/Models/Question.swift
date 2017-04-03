@@ -6,9 +6,9 @@ import Foundation
 struct Question: Model {
     // Fields from database to fully represent question
     var id: Node? // Identifier to comform to model
-    // Data to deal with Blob type
+    // Question and solution contain base64 png to deal with Blob type
     let question: String
-    let solution: Data
+    let solution: String
     let answer: String
     let subject: String
     let topic: String
@@ -16,7 +16,7 @@ struct Question: Model {
     var exists: Bool = false
 
     // Initialize values
-    init(question: String, solution: Data, answer: String, subject: String, topic: String) {
+    init(question: String, solution: String, answer: String, subject: String, topic: String) {
         self.question = question
         self.solution = solution
         self.answer = answer
@@ -29,7 +29,8 @@ struct Question: Model {
         id = try node.extract("id")
         question = try node.extract("question")
         //question = try node.extract("question", transform: Question.stringToData)
-        solution = try node.extract("solution", transform: Question.stringToData)
+        //solution = try node.extract("solution", transform: Question.stringToData)
+        solution = try node.extract("solution")
         answer = try node.extract("answer")
         subject = try node.extract("subject")
         topic = try node.extract("topic")
@@ -43,7 +44,7 @@ struct Question: Model {
             // Node data type can only use strings, ints, etc
             "question": question,
             //"question": question,
-            "solution": Question.dataToString(solution),
+            "solution": solution,
             "answer": answer,
             "subject": subject,
             "topic": topic
@@ -68,7 +69,7 @@ struct Question: Model {
 }
 
 // Helper functions
-extension Question {
+/*extension Question {
     // Data to string is valid conversion
     // Data just sequence of bytes
     static func dataToString(_ data: Data) -> String {
@@ -77,4 +78,4 @@ extension Question {
     static func stringToData(_ dataString: String) -> Data {
         return dataString.data(using: .utf8)!
     }
-}
+}*/
