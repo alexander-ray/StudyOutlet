@@ -16,10 +16,10 @@ drop.get("hello") { request in
 }
 
 // MARK: - User routes
-drop.post("user") {req in
+drop.post("register") {req in
     var user = try User(node: req.json)
     try user.save()
-    return user.username
+    return user.username.value
 }
 // Get all users
 drop.get("users") {req in
