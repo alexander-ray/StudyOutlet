@@ -22,6 +22,8 @@
 		A96FD0F21E90480E00223C39 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FD0F11E90480E00223C39 /* SettingViewController.swift */; };
 		A96FD0F41E90499400223C39 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A96FD0F31E90499400223C39 /* back.png */; };
 		A96FD0FA1E904EB000223C39 /* OPEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FD0F91E904EB000223C39 /* OPEViewController.swift */; };
+		ED38A7C51E93FF1F009DE871 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C31E93FF1F009DE871 /* Alamofire.framework */; };
+		ED38A7C61E93FF1F009DE871 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		A96FD0F11E90480E00223C39 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ../SettingViewController.swift; sourceTree = "<group>"; };
 		A96FD0F31E90499400223C39 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		A96FD0F91E904EB000223C39 /* OPEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPEViewController.swift; sourceTree = "<group>"; };
+		ED38A7C31E93FF1F009DE871 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED38A7C51E93FF1F009DE871 /* Alamofire.framework in Frameworks */,
+				ED38A7C61E93FF1F009DE871 /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +103,7 @@
 				A96FD0CB1E90330800223C39 /* StudyOutletTests */,
 				A96FD0D61E90330800223C39 /* StudyOutletUITests */,
 				A96FD0B51E90330800223C39 /* Products */,
+				ED38A7C21E93FF1F009DE871 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,12 +126,7 @@
 				A96FD0F91E904EB000223C39 /* OPEViewController.swift */,
 				A96FD0BB1E90330800223C39 /* Main.storyboard */,
 				A96FD0BE1E90330800223C39 /* Assets.xcassets */,
-				A96FD0E51E90365C00223C39 /* ETSGRE.png */,
-				A96FD0E71E90374600223C39 /* GRE_Title.png */,
-				A96FD0E91E903D0900223C39 /* Outline.png */,
-				A96FD0EB1E903EFB00223C39 /* Setting.png */,
-				A96FD0ED1E903F0100223C39 /* Question.png */,
-				A96FD0F31E90499400223C39 /* back.png */,
+				ED38A7C11E93FC29009DE871 /* Images */,
 				A96FD0C01E90330800223C39 /* LaunchScreen.storyboard */,
 				A96FD0C31E90330800223C39 /* Info.plist */,
 			);
@@ -149,6 +151,28 @@
 			path = StudyOutletUITests;
 			sourceTree = "<group>";
 		};
+		ED38A7C11E93FC29009DE871 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A96FD0E51E90365C00223C39 /* ETSGRE.png */,
+				A96FD0E71E90374600223C39 /* GRE_Title.png */,
+				A96FD0E91E903D0900223C39 /* Outline.png */,
+				A96FD0EB1E903EFB00223C39 /* Setting.png */,
+				A96FD0ED1E903F0100223C39 /* Question.png */,
+				A96FD0F31E90499400223C39 /* back.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		ED38A7C21E93FF1F009DE871 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED38A7C31E93FF1F009DE871 /* Alamofire.framework */,
+				ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -159,6 +183,7 @@
 				A96FD0B01E90330800223C39 /* Sources */,
 				A96FD0B11E90330800223C39 /* Frameworks */,
 				A96FD0B21E90330800223C39 /* Resources */,
+				ED38A7C71E93FF31009DE871 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -283,6 +308,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		ED38A7C71E93FF31009DE871 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A96FD0B01E90330800223C39 /* Sources */ = {
@@ -446,6 +489,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StudyOutlet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = StudyOutletGroup.StudyOutlet;
@@ -459,6 +506,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = StudyOutlet/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = StudyOutletGroup.StudyOutlet;
@@ -541,6 +592,7 @@
 				A96FD0DE1E90330800223C39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A96FD0DF1E90330800223C39 /* Build configuration list for PBXNativeTarget "StudyOutletTests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +601,7 @@
 				A96FD0E11E90330800223C39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A96FD0E21E90330800223C39 /* Build configuration list for PBXNativeTarget "StudyOutletUITests" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +610,7 @@
 				A96FD0E41E90330800223C39 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
