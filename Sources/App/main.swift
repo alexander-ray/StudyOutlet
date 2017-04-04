@@ -5,12 +5,14 @@ import Auth
 let drop = Droplet()
 try drop.addProvider(VaporMySQL.Provider.self)
 
-drop.preparations.append(Question.self)
-drop.preparations.append(User.self)
-
 // Adding middleware for authentication
 // Session management
-drop.addConfigurable(middleware: AuthMiddleware(user: User.self), name: "auth")
+let auth = AuthMiddleware(user: User.self)
+drop.middleware.append(auth)
+drop.preparations = [User.self]
+
+drop.preparations.append(Question.self)
+drop.preparations.append(User.self)
 
 let question = QuestionConroller()
 question.addRoutes(drop: drop)

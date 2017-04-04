@@ -12,9 +12,10 @@ import Turnstile
 
 final class UserController {
     func addRoutes(drop: Droplet) {
-        let question = drop.grouped("user")
-        question.post("register", handler: register)
-        question.get("users", handler: getUsers)
+        let user = drop.grouped("user")
+        user.post("register", handler: register)
+        user.get("users", handler: getUsers)
+        user.post("login", handler: login)
     }
     
     // Register user
@@ -33,6 +34,19 @@ final class UserController {
         let users = try User.all().makeNode()
         let usersDictionary = ["users": users]
         return try JSON(node: usersDictionary)
+    }
+    
+    func login(request: Request) throws -> ResponseRepresentable {
+        let user = try User(node: request.json)
+        let username = user.username
+        let password = user.password
+        let credentials = UsernamePassword(username: username, password: password)
+        do {
+            try request.auth.login(credentials)
+            return username
+        } catch let e as TurnstileError {
+            return e.description
+        }
     }
 }
 

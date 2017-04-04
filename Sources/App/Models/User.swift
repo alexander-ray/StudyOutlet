@@ -54,7 +54,7 @@ struct User: Model {
     
     // Registering new user
     static func register(username: String, rawPassword: String) throws -> User {
-        var newUser = try User(username: name, rawPassword: rawPassword) // Get information
+        var newUser = try User(username: username, rawPassword: rawPassword) // Get information
         
         // Check if username already used
         if try User.query().filter("username", newUser.username).first() == nil {
@@ -78,8 +78,7 @@ extension User: Auth.User {
             case let credentials as UsernamePassword:
                 // Try to find user, filtering by username
                 let fetchedUser = try User.query()
-                    .filter("username", credentials.username)
-                    .first()
+                    .filter("username", credentials.username).first()
                 // If password is not empty and hashes match
                 if let password = fetchedUser?.password,
                     password != "",
@@ -106,17 +105,5 @@ extension User: Auth.User {
     
     static func register(credentials: Credentials) throws -> Auth.User {
         throw Abort.custom(status: .badRequest, message: "Register not supported.")
-    }
-}
-
-import HTTP
-
-extension Request {
-    func user() throws -> User {
-        guard let user = try auth.user() as? User else {
-            throw Abort.custom(status: .badRequest, message: "Invalid user type.")
-        }
-        
-        return user
     }
 }
