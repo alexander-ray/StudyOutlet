@@ -1,4 +1,5 @@
-// Code inspired by ray wenderlich's "registering users over ssl"
+// Authentication code largely from ray wenderlich's "registering users over ssl" and "Authentication with Turnstile
+// Model/auth code from https://vapor.github.io/documentation/
 import Vapor
 import Fluent
 import Foundation
@@ -9,7 +10,7 @@ import TurnstileCrypto
 struct User: Model {
     // Declarations
     var id: Node?
-    var username: Valid<NameValidator>
+    var username: String
     let password: String
     
     // For fluent
@@ -17,7 +18,7 @@ struct User: Model {
     
     // Initializer
     init(username: String, rawPassword: String) throws {
-        self.username = try username.validated()
+        self.username = username
         let validatedPassword: Valid<PasswordValidator> = try rawPassword.validated()
         self.password = BCrypt.hash(password: validatedPassword.value)
     }
@@ -25,8 +26,7 @@ struct User: Model {
     // Get from database
     init(node: Node, in context: Context) throws{
         id = try node.extract("id")
-        let usernameString = try node.extract("username") as String
-        username = try usernameString.validated()
+        username = try node.extract("username")
         let passwordString = try node.extract("password") as String
         password = passwordString
     }
@@ -35,7 +35,7 @@ struct User: Model {
     func makeNode(context: Context) throws -> Node {
         return try Node(node: [
             "id": id,
-            "username": username.value,
+            "username": username,
             "password": password,
         ])
     }
@@ -57,7 +57,7 @@ struct User: Model {
         var newUser = try User(username: name, rawPassword: rawPassword) // Get information
         
         // Check if username already used
-        if try User.query().filter("username", newUser.username.value).first() == nil {
+        if try User.query().filter("username", newUser.username).first() == nil {
             try newUser.save()
             return newUser
         } else {
@@ -69,25 +69,38 @@ struct User: Model {
 import Auth
 
 extension User: Auth.User {
+    // Authenticate given credentials
     static func authenticate(credentials: Credentials) throws -> Auth.User {
-        let user: User?
+        var user: User?
         
         switch credentials {
-            case let id as Identifier:
-                user = try User.find(id.id)
-            case let accessToken as AccessToken:
-                user = try User.query().filter("access_token", accessToken.string).first()
-            case let apiKey as APIKey:
-                user = try User.query().filter("email", apiKey.id).filter("password", apiKey.secret).first()
+            // Can add cases for different types of authentication
+            case let credentials as UsernamePassword:
+                // Try to find user, filtering by username
+                let fetchedUser = try User.query()
+                    .filter("username", credentials.username)
+                    .first()
+                // If password is not empty and hashes match
+                if let password = fetchedUser?.password,
+                    password != "",
+                    (try? BCrypt.verify(password: credentials.password, matchesHash: password)) == true {
+                    user = fetchedUser
+                }
+            // Used for session authentication
+            case let credentials as Identifier:
+                user = try User.find(credentials.id)
             default:
-                throw Abort.custom(status: .badRequest, message: "Invalid credentials.")
+                throw UnsupportedCredentialsError()
         }
         
-        guard let u = user else {
-            throw Abort.custom(status: .badRequest, message: "User not found")
+        // If user exists, return
+        // Else, throw error
+        if let user = user {
+            return user
         }
-        
-        return u
+        else {
+            throw IncorrectCredentialsError()
+        }
     }
     
     

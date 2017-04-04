@@ -1,5 +1,6 @@
 import Vapor
 import VaporMySQL
+import Auth
 
 let drop = Droplet()
 try drop.addProvider(VaporMySQL.Provider.self)
@@ -7,19 +8,15 @@ try drop.addProvider(VaporMySQL.Provider.self)
 drop.preparations.append(Question.self)
 drop.preparations.append(User.self)
 
-drop.get("hello") { request in
-    let name = request.data["name"]?.string ?? "stranger"
-
-    return try drop.view.make("hello", [
-        "name":name
-    ])
-}
+// Adding middleware for authentication
+// Session management
+drop.addConfigurable(middleware: AuthMiddleware(user: User.self), name: "auth")
 
 // MARK: - User routes
 drop.post("register") {req in
     var user = try User(node: req.json)
     try user.save()
-    return user.username.value
+    return user.username
 }
 // Get all users
 drop.get("users") {req in
