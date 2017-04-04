@@ -21,6 +21,20 @@ drop.post("user") {req in
     try user.save()
     return user.username
 }
+// Get all users
+drop.get("users") {req in
+    let users = try User.all().makeNode()
+    let usersDictionary = ["users": users]
+    return try JSON(node: usersDictionary)
+}
+// Get user with specified ID
+drop.get("user", Int.self) { req, userId in
+    guard let user = try User.find(userId) else {
+        throw Abort.notFound
+    }
+    return try user.makeJSON()
+}
+
 
 // MARK: - Question routes
 // Create new question
