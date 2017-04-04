@@ -53,7 +53,7 @@ struct User: Model {
     }
     
     // Registering new user
-    static func register(name: String, email: String, rawPassword: String) throws -> User {
+    static func register(username: String, rawPassword: String) throws -> User {
         var newUser = try User(username: name, rawPassword: rawPassword) // Get information
         
         // Check if username already used
