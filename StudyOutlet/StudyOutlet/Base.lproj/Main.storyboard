@@ -208,6 +208,7 @@
                     </view>
                     <connections>
                         <outlet property="CountDown" destination="4cy-z4-FbZ" id="Z6g-1y-2Ze"/>
+                        <outlet property="GR0" destination="Yys-td-LRF" id="Plc-bk-oJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ml-Hf-io6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,6 +332,6 @@
         <image name="back.png" width="222" height="196"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iGV-Us-dPt"/>
+        <segue reference="NEi-9r-0Fa"/>
     </inferredMetricsTieBreakers>
 </document>
