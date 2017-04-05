@@ -1,14 +1,14 @@
 //
-//  OPEViewController.swift
+//  ComingSoonViewController.swift
 //  StudyOutlet
 //
-//  Created by Bill on 4/1/17.
+//  Created by Bill on 4/4/17.
 //  Copyright © 2017 StudyOutletGroup. All rights reserved.
 //
 
 import UIKit
 
-class OPEViewController: UIViewController {
+class ComingSoonViewController: UIViewController {
 
     @IBOutlet weak var CountDown: UILabel!
     
@@ -25,22 +25,14 @@ class OPEViewController: UIViewController {
     }
     
     
-    @IBAction func BackToMenuOPE(_ sender: Any)
+    @IBAction func BackOne(_ sender: Any)
     {
-        performSegue(withIdentifier: "BackToMenuOPE", sender: self)
+        performSegue(withIdentifier: "Back1", sender: self)
     }
-    
-    @IBAction func GoToExam0877(_ sender: Any)
-    {
-        performSegue(withIdentifier: "ToGR0877", sender: self)
-    }
-    
-    @IBAction func GoToExam0177(_ sender: Any)
-    {
-        performSegue(withIdentifier: "ToComingSoon", sender: self)
-    }
+
     
     
+
     /*
     // MARK: - Navigation
 
