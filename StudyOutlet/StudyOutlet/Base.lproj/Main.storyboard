@@ -352,6 +352,10 @@
                                     <action selector="StopAction:" destination="FQb-5y-7hw" eventType="touchUpInside" id="k8Q-Ag-fcg"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PH2-2a-MWM">
+                                <rect key="frame" x="0.0" y="105" width="375" height="525"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -362,6 +366,7 @@
                         <outlet property="StopButtonOutlet" destination="FlY-an-pZi" id="yAN-Bj-L5w"/>
                         <outlet property="StopImageOutlet" destination="Jat-9Y-otS" id="Rri-pE-O8p"/>
                         <outlet property="countMinute" destination="TzY-uV-lVV" id="UuU-Ic-ArP"/>
+                        <outlet property="imageView" destination="PH2-2a-MWM" id="Vll-mH-33b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nau-kE-5if" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -487,7 +492,7 @@
         <image name="back.png" width="222" height="196"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e9j-Zq-12r"/>
+        <segue reference="glK-T1-cir"/>
         <segue reference="NEi-9r-0Fa"/>
     </inferredMetricsTieBreakers>
 </document>

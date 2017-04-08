@@ -21,6 +21,7 @@ class GR0877ViewController: UIViewController {
     @IBOutlet weak var StopImageOutlet: UIImageView!
     @IBOutlet weak var StartButtonOutlet: UIButton!
     @IBOutlet weak var StopButtonOutlet: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBAction func Button_BackToOPEMenu(_ sender: Any)
     {
@@ -44,19 +45,17 @@ class GR0877ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         CountDown.text = String(dDate) + " Days Until next Test"
+        
         // Populate test's question array
         test.getQuestions() { arr in
             self.test.questionArray = arr!
+            if (self.test.questionArray.count > 0) {
+                let question = self.test.questionArray[0].question
+                self.imageView.image = question
+            }
         }
-        if (test.questionArray.count > 0) {
-            let question = test.questionArray[0].question
-            let imageView = UIImageView(image: question)
-            imageView.frame = CGRect(x: 0, y: 0, width: 100, height: 200)
-            view.addSubview(imageView)
-        }
+        
         
     }
 
