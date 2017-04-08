@@ -27,7 +27,7 @@ final class QuestionConroller {
     // Get all questions
     func getQuestions(request: Request) throws -> ResponseRepresentable {
         let questions = try Question.all().makeNode()
-        let questionsDictionary = ["questions": questions]
-        return try JSON(node: questionsDictionary)
+        //let questionsDictionary = ["questions": questions]
+        return try JSON(node: questions)
     }
 }

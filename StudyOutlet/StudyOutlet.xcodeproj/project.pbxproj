@@ -28,6 +28,8 @@
 		A96FD0FA1E904EB000223C39 /* OPEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FD0F91E904EB000223C39 /* OPEViewController.swift */; };
 		ED38A7C51E93FF1F009DE871 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C31E93FF1F009DE871 /* Alamofire.framework */; };
 		ED38A7C61E93FF1F009DE871 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */; };
+		EDFAEBE41E984BA000C32E57 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAEBE31E984BA000C32E57 /* Test.swift */; };
+		EDFAEBE71E984BCD00C32E57 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAEBE61E984BCD00C32E57 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		A96FD0F91E904EB000223C39 /* OPEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPEViewController.swift; sourceTree = "<group>"; };
 		ED38A7C31E93FF1F009DE871 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		EDFAEBE31E984BA000C32E57 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		EDFAEBE61E984BCD00C32E57 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,8 @@
 		A96FD0B61E90330800223C39 /* StudyOutlet */ = {
 			isa = PBXGroup;
 			children = (
+				EDFAEBE51E984BB900C32E57 /* Helper */,
+				EDFAEBE21E984B8D00C32E57 /* Models */,
 				A96FD0B71E90330800223C39 /* AppDelegate.swift */,
 				A96FD0B91E90330800223C39 /* ViewController.swift */,
 				A96FD0F11E90480E00223C39 /* SettingViewController.swift */,
@@ -183,6 +189,22 @@
 				ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDFAEBE21E984B8D00C32E57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EDFAEBE31E984BA000C32E57 /* Test.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		EDFAEBE51E984BB900C32E57 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				EDFAEBE61E984BCD00C32E57 /* Helper.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,9 +371,11 @@
 				A9011C901E94767E0051CBA7 /* GR0877ViewController.swift in Sources */,
 				A96FD0BA1E90330800223C39 /* ViewController.swift in Sources */,
 				A96FD0FA1E904EB000223C39 /* OPEViewController.swift in Sources */,
+				EDFAEBE41E984BA000C32E57 /* Test.swift in Sources */,
 				A96FD0B81E90330800223C39 /* AppDelegate.swift in Sources */,
 				A9011C981E94B3540051CBA7 /* ComingSoonViewController.swift in Sources */,
 				A96FD0F21E90480E00223C39 /* SettingViewController.swift in Sources */,
+				EDFAEBE71E984BCD00C32E57 /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
