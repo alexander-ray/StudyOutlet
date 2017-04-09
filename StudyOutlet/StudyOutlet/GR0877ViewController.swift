@@ -28,13 +28,13 @@ class GR0877ViewController: UIViewController {
         CountDown.text = String(dDate) + " Days Until next Test"
         
         // Populate test's question array
-//        test.getQuestions() { arr in
-//            self.test.questionArray = arr!
-//            if (self.test.questionArray.count > 0) {
-//                let question = self.test.questionArray[0].question
-//                self.imageView.image = question
-//            }
-//        }
+        test.getQuestions() { arr in
+            self.test.questionArray = arr!
+            if (self.test.questionArray.count > 0) {
+                let question = self.test.questionArray[0].question
+                self.imageView.image = question
+            }
+        }
     }
     
     // --------------------
@@ -78,4 +78,94 @@ class GR0877ViewController: UIViewController {
     // Code for timer. end
     // --------------------
     
+    
+    
+    // --------------------
+    // Code for choice:
+    // --------------------
+    @IBOutlet weak var ChoiceOutlet: UILabel!
+    
+    @IBAction func A_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "A"
+    }
+    
+    @IBAction func B_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "B"
+    }
+    
+    @IBAction func C_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "C"
+    }
+    
+    @IBAction func D_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "D"
+    }
+    
+    @IBAction func E_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "E"
+    }
+    
+    // --------------------
+    // Code for choice. end
+    // --------------------
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
