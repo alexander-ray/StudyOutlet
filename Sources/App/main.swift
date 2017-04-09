@@ -18,53 +18,30 @@ drop.middleware.append(AuthMiddleware(user: User.self))
 //question.addRoutes(drop: drop)
 //let user = UserController()
 //user.addRoutes(drop: drop)
-
-//drop.run()*/
-
+let protect = ProtectMiddleware(error: Abort.custom(status: .unauthorized, message: "Unauthorized"))
+let userController = UserController()
+let questionController = QuestionConroller()
 drop.group("api") { api in
-    api.group("user") { user in
-        
-        let userController = UserController()
-        
-        /*
-         * Registration
-         * Create a new Username and Password to receive an authorization token and account
-         */
-        user.post("register", handler: userController.register)
-        
-        /*
-         * Log In
-         * Pass the Username and Password to receive a new token
-         */
-        user.post("login", handler: userController.login)
-        // User login
-        
-        /*
-         * Secured Endpoints
-         * Anything in here requires the Authorication header:
-         * Example: "Authorization: Bearer TOKEN"
-         */
-        let protect = ProtectMiddleware(error: Abort.custom(status: .unauthorized, message: "Unauthorized"))
-        user.group(BearerAuthenticationMiddleware(), protect) { secured in
-            let users = secured.grouped("users")
-            users.get("users", handler: userController.getUsers)
-        }
+    /*
+     * Registration
+     * Create a new Username and Password to receive an authorization token and account
+     */
+    api.post("register", handler: userController.register)
+    
+    /*
+     * Log In
+     * Pass the Username and Password to receive a new token
+     */
+    api.post("login", handler: userController.login)
+    
+    
+    api.group(BearerAuthenticationMiddleware(), protect) { user in
+        user.get("users", handler: userController.getUsers)
     }
-    api.group("question") { question in
-        let questionController = QuestionConroller()
-        
-        /*
-         * Secured Endpoints
-         * Anything in here requires the Authorication header:
-         * Example: "Authorization: Bearer TOKEN"
-         */
-        let protect = ProtectMiddleware(error: Abort.custom(status: .unauthorized, message: "Unauthorized"))
-        question.group(BearerAuthenticationMiddleware(), protect) { secured in
-            let questions = secured.grouped("questions")
-            questions.post("questions", handler: questionController.addQuestion)
-            questions.get("questions", handler: questionController.getQuestions)
-        }
-
+    
+    api.group(BearerAuthenticationMiddleware(), protect) { question in
+        question.post("questions", handler: questionController.addQuestion)
+        question.get("questions", handler: questionController.getQuestions)
     }
 }
 
