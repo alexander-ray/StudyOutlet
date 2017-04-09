@@ -480,6 +480,50 @@
             </objects>
             <point key="canvasLocation" x="1038" y="38"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="wrb-bF-7iT">
+            <objects>
+                <viewController id="eni-Yn-hkn" customClass="LoginViewController" customModule="StudyOutlet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s0Z-JI-cCp"/>
+                        <viewControllerLayoutGuide type="bottom" id="BjX-K5-47x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vhn-Ni-oT0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ij3-UU-aWZ">
+                                <rect key="frame" x="89" y="114" width="197" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n5I-12-k6K">
+                                <rect key="frame" x="89" y="187" width="197" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSk-63-FHS">
+                                <rect key="frame" x="168" y="270" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="CSk-63-FHS" id="Vik-jr-Ink"/>
+                        <outlet property="passwordField" destination="n5I-12-k6K" id="ki3-Ev-j10"/>
+                        <outlet property="usernameField" destination="Ij3-UU-aWZ" id="zqD-4J-nFf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IBf-pv-aSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="517.60000000000002" y="-645.42728635682158"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ETSGRE.png" width="1166" height="314"/>

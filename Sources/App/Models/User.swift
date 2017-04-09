@@ -6,29 +6,38 @@ import Foundation
 // Registration and authentication
 import Turnstile
 import TurnstileCrypto
+import TurnstileWeb
+import HTTP
 
 struct User: Model {
     // Declarations
     var id: Node?
     var username: String
-    let password: String
+    var password = ""
+    var accessKey: String
+    //var apiKeyID = URandom().secureToken
+    //var apiKeySecret = URandom().secureToken
     
     // For fluent
     var exists: Bool = false
     
     // Initializer
-    init(username: String, rawPassword: String) throws {
-        self.username = username
-        let validatedPassword: Valid<PasswordValidator> = try rawPassword.validated()
-        self.password = BCrypt.hash(password: validatedPassword.value)
+    init(credentials: UsernamePassword) throws {
+        self.username = credentials.username
+        //let validatedPassword: Valid<PasswordValidator> = try credentials.password.validated()
+        //self.password = BCrypt.hash(password: validatedPassword.value)
+        self.password = BCrypt.hash(password: credentials.password)
+        self.accessKey = URandom().secureToken
     }
     
-    // Get from database
     init(node: Node, in context: Context) throws{
         id = try node.extract("id")
+        //username = try node.extract("username") as String
+        //let passwordString = try node.extract("password") as String
+        //password = passwordString
         username = try node.extract("username")
-        let passwordString = try node.extract("password") as String
-        password = passwordString
+        password = try node.extract("password")
+        accessKey = try node.extract("access_key")
     }
     
     // Insert into database
@@ -37,7 +46,14 @@ struct User: Model {
             "id": id,
             "username": username,
             "password": password,
-        ])
+            "access_key": accessKey,
+            ])
+    }
+    
+    static func getAccessKey(username: String) throws -> String {
+        var user: User?
+        user = try User.query().filter("username", username).first()
+        return (user?.accessKey)!
     }
     
     // Database setup functions
@@ -46,23 +62,11 @@ struct User: Model {
             users.id()
             users.string("username")
             users.string("password")
+            users.string("access_key")
         }
     }
     static func revert(_ database: Database) throws{
         try database.delete("users")
-    }
-    
-    // Registering new user
-    static func register(username: String, rawPassword: String) throws -> User {
-        var newUser = try User(username: username, rawPassword: rawPassword) // Get information
-        
-        // Check if username already used
-        if try User.query().filter("username", newUser.username).first() == nil {
-            try newUser.save()
-            return newUser
-        } else {
-            throw AccountTakenError()
-        }
     }
 }
 
@@ -88,6 +92,8 @@ extension User: Auth.User {
             // Used for session authentication
             case let credentials as Identifier:
                 user = try User.find(credentials.id)
+            case let accessToken as AccessToken:
+                user = try User.query().filter("access_key", accessToken.string).first()
             default:
                 throw UnsupportedCredentialsError()
         }
@@ -102,8 +108,22 @@ extension User: Auth.User {
         }
     }
     
-    
+    // Registering new user
     static func register(credentials: Credentials) throws -> Auth.User {
-        throw Abort.custom(status: .badRequest, message: "Register not supported.")
+        var newUser: User
+        switch credentials {
+        case let credentials as UsernamePassword:
+            newUser = try User(credentials: credentials)
+        default:
+            throw UnsupportedCredentialsError()
+        }
+        
+        // Check if username not already used
+        if try User.query().filter("username", newUser.username).first() == nil {
+            try newUser.save()
+            return newUser
+        } else {
+            throw AccountTakenError()
+        }
     }
 }

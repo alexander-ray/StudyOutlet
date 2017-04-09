@@ -16,7 +16,6 @@ final class QuestionConroller {
         question.post("questions", handler: addQuestion)
         question.get("questions", handler: getQuestions)
     }
-    
     // Add question
     func addQuestion(request: Request) throws -> ResponseRepresentable {
         var question = try Question(node: request.json)

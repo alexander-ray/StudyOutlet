@@ -3,7 +3,7 @@ import Fluent
 import Foundation
 
 // Model for a question
-struct Question: Model {
+final class Question: Model {
     // Fields from database to fully represent question
     var id: Node? // Identifier to comform to model
     // Question and solution contain base64 png to deal with Blob type
