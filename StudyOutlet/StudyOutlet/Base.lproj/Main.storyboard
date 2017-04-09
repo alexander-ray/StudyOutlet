@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eni-Yn-hkn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -103,6 +103,14 @@
                                 <connections>
                                     <action selector="ToOPE:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lEV-iS-vFN"/>
                                     <segue destination="e6u-wX-osI" kind="show" identifier="ToOPE" id="tl5-Yr-ZJA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVT-06-XVi">
+                                <rect key="frame" x="16" y="363" width="343" height="58"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="ToCEMenu:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oz0-wg-eMo"/>
+                                    <segue destination="QYM-tq-BFz" kind="show" identifier="ShowCEMenu" id="mdD-oa-vfE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -278,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pNw-Cn-re3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="1571.9640179910045"/>
+            <point key="canvasLocation" x="-926" y="815"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ate-fY-YKs">
@@ -372,6 +380,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nau-kE-5if" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1037.5999999999999" y="814.54272863568224"/>
+        </scene>
+        <!--Customize Menu View Controller-->
+        <scene sceneID="1Ua-cQ-oXq">
+            <objects>
+                <viewController id="QYM-tq-BFz" customClass="CustomizeMenuViewController" customModule="StudyOutlet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lg5-lw-Ecq"/>
+                        <viewControllerLayoutGuide type="bottom" id="3FJ-36-8Rs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aTs-e2-Yfs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Days Until Next Test" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ex-fG-GhQ">
+                                <rect key="frame" x="0.0" y="28" width="375" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.26503500340000002" green="0.44729644060000001" blue="0.76689797640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="9FC-Fi-Ff5">
+                                <rect key="frame" x="16" y="57" width="36" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rx-dR-c3T">
+                                <rect key="frame" x="16" y="57" width="36" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="BackToMainMenu:" destination="QYM-tq-BFz" eventType="touchUpInside" id="lCT-9y-Goy"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="BackToMainCE" id="FTg-aE-AzZ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ETSGRE.png" translatesAutoresizingMaskIntoConstraints="NO" id="oka-dz-PEd">
+                                <rect key="frame" x="16" y="642" width="65" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHs-on-Nij">
+                                <rect key="frame" x="129" y="111" width="142" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="5" maxValue="170" translatesAutoresizingMaskIntoConstraints="NO" id="bfP-KA-SqP">
+                                <rect key="frame" x="55" y="150" width="264" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="C_time_slider:" destination="QYM-tq-BFz" eventType="valueChanged" id="Tcn-N9-gzQ"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="C_time_label" destination="OHs-on-Nij" id="xUY-bB-msU"/>
+                        <outlet property="C_time_sliderOutlet" destination="bfP-KA-SqP" id="MCw-Zm-kho"/>
+                        <outlet property="CountDown" destination="6ex-fG-GhQ" id="4c0-qh-tg0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5y-DS-eXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="1601.649175412294"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="MS9-3C-sgc">
@@ -478,7 +549,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enR-wr-utm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="38"/>
+            <point key="canvasLocation" x="2001" y="-746"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="wrb-bF-7iT">
@@ -536,7 +607,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBf-pv-aSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="517.60000000000002" y="-645.42728635682158"/>
+            <point key="canvasLocation" x="33" y="-746"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="4uD-W8-GnP">
@@ -594,7 +665,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxB-MO-XnA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="-645"/>
+            <point key="canvasLocation" x="1038" y="-746"/>
         </scene>
     </scenes>
     <resources>
@@ -609,6 +680,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="glK-T1-cir"/>
-        <segue reference="XSD-wM-syv"/>
+        <segue reference="FTg-aE-AzZ"/>
     </inferredMetricsTieBreakers>
 </document>

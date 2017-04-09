@@ -45,5 +45,11 @@ class ViewController: UIViewController
         performSegue(withIdentifier: "ToOPE", sender: self)
     }
     
+    @IBAction func ToCEMenu(_ sender: Any)
+    {
+        performSegue(withIdentifier: "ShowCEMenu", sender: self)
+    }
+    
+    
 }
 

@@ -23,17 +23,36 @@ class GR0877ViewController: UIViewController {
     @IBOutlet weak var StopButtonOutlet: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        CountDown.text = String(dDate) + " Days Until next Test"
+        
+        // Populate test's question array
+//        test.getQuestions() { arr in
+//            self.test.questionArray = arr!
+//            if (self.test.questionArray.count > 0) {
+//                let question = self.test.questionArray[0].question
+//                self.imageView.image = question
+//            }
+//        }
+    }
+    
+    // --------------------
+    // Code for timer:
+    // --------------------
     @IBAction func Button_BackToOPEMenu(_ sender: Any)
     {
         performSegue(withIdentifier: "BackToOPEMenu", sender: self)
     }
+    
     @IBAction func StartAction(_ sender: Any)
     {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GR0877ViewController.counter), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GR0877ViewController.counter), userInfo: nil, repeats: true)
         
         StartImageOutlet.isHidden = true
         StartButtonOutlet.isHidden = true
     }
+    
     @IBAction func StopAction(_ sender: Any)
     {
         timer.invalidate()
@@ -41,22 +60,6 @@ class GR0877ViewController: UIViewController {
         countMinute.text = "170 min"
         StartImageOutlet.isHidden = false
         StartButtonOutlet.isHidden = false
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        CountDown.text = String(dDate) + " Days Until next Test"
-        
-        // Populate test's question array
-        test.getQuestions() { arr in
-            self.test.questionArray = arr!
-            if (self.test.questionArray.count > 0) {
-                let question = self.test.questionArray[0].question
-                self.imageView.image = question
-            }
-        }
-        
-        
     }
 
     func counter()
@@ -71,4 +74,8 @@ class GR0877ViewController: UIViewController {
             StartButtonOutlet.isHidden = false
         }
     }
+    // --------------------
+    // Code for timer. end
+    // --------------------
+    
 }
