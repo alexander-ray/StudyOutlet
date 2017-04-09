@@ -29,6 +29,7 @@
 		ED0C9AE71E9966AD002BE641 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */; };
 		ED38A7C51E93FF1F009DE871 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C31E93FF1F009DE871 /* Alamofire.framework */; };
 		ED38A7C61E93FF1F009DE871 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */; };
+		ED8CFE171E9A1D9C005650B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8CFE161E9A1D9C005650B1 /* RegisterViewController.swift */; };
 		EDFAEBE41E984BA000C32E57 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAEBE31E984BA000C32E57 /* Test.swift */; };
 		EDFAEBE71E984BCD00C32E57 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAEBE61E984BCD00C32E57 /* Helper.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED38A7C31E93FF1F009DE871 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		ED8CFE161E9A1D9C005650B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EDFAEBE31E984BA000C32E57 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EDFAEBE61E984BCD00C32E57 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 				A9011C8F1E94767E0051CBA7 /* GR0877ViewController.swift */,
 				A9011C971E94B3540051CBA7 /* ComingSoonViewController.swift */,
 				ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */,
+				ED8CFE161E9A1D9C005650B1 /* RegisterViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -380,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED0C9AE71E9966AD002BE641 /* LoginViewController.swift in Sources */,
+				ED8CFE171E9A1D9C005650B1 /* RegisterViewController.swift in Sources */,
 				A9011C901E94767E0051CBA7 /* GR0877ViewController.swift in Sources */,
 				A96FD0BA1E90330800223C39 /* ViewController.swift in Sources */,
 				A96FD0FA1E904EB000223C39 /* OPEViewController.swift in Sources */,

@@ -5,13 +5,25 @@ import Turnstile
 import TurnstileCrypto
 import TurnstileWeb
 import Fluent
+import Cookies
+import Foundation
 
 let drop = Droplet()
 try drop.addProvider(VaporMySQL.Provider.self)
 
 drop.preparations.append(Question.self)
 drop.preparations.append(User.self)
-drop.middleware.append(AuthMiddleware(user: User.self))
+// Custom cookie
+let auth = AuthMiddleware(user: User.self){ value in
+    return Cookie(
+        name: "alex_cookie",
+        value: value,
+        expires: Date().addingTimeInterval(60), // 1 minute
+        secure: true,
+        httpOnly: true
+    )
+}
+drop.middleware.append(auth)
 
 let protect = ProtectMiddleware(error: Abort.custom(status: .unauthorized, message: "Unauthorized"))
 let userController = UserController()

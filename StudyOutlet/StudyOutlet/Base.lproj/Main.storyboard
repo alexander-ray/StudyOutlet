@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eni-Yn-hkn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -510,6 +510,17 @@
                                 <rect key="frame" x="168" y="270" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="sendCredentials:" destination="eni-Yn-hkn" eventType="touchUpInside" id="ddb-NX-aKo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLV-hM-xbF">
+                                <rect key="frame" x="159" y="318" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="goToRegister:" destination="eni-Yn-hkn" eventType="touchUpInside" id="LML-mQ-6PD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -517,12 +528,73 @@
                     <connections>
                         <outlet property="loginButton" destination="CSk-63-FHS" id="Vik-jr-Ink"/>
                         <outlet property="passwordField" destination="n5I-12-k6K" id="ki3-Ev-j10"/>
+                        <outlet property="registerButton" destination="OLV-hM-xbF" id="70b-Mg-xDf"/>
                         <outlet property="usernameField" destination="Ij3-UU-aWZ" id="zqD-4J-nFf"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="MainMenu" id="XSD-wM-syv"/>
+                        <segue destination="Lp7-Hc-5pD" kind="show" identifier="Register" id="HAd-hl-hxd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IBf-pv-aSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="517.60000000000002" y="-645.42728635682158"/>
+        </scene>
+        <!--Register View Controller-->
+        <scene sceneID="4uD-W8-GnP">
+            <objects>
+                <viewController id="Lp7-Hc-5pD" customClass="RegisterViewController" customModule="StudyOutlet" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="j6q-rY-Ufa"/>
+                        <viewControllerLayoutGuide type="bottom" id="KRs-2d-IAc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hom-wc-gJR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MmG-1M-rfg">
+                                <rect key="frame" x="89" y="114" width="197" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dj8-1s-tR4">
+                                <rect key="frame" x="89" y="182" width="197" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ss-9u-941">
+                                <rect key="frame" x="159" y="270" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Register"/>
+                                <connections>
+                                    <action selector="sendCredentials:" destination="Lp7-Hc-5pD" eventType="touchUpInside" id="fqJ-rs-L9G"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qol-mm-9Ll">
+                                <rect key="frame" x="141" y="318" width="93" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to Login"/>
+                                <connections>
+                                    <action selector="goToLogin:" destination="Lp7-Hc-5pD" eventType="touchUpInside" id="Oed-IH-aJE"/>
+                                    <action selector="sendCredentials:" destination="eni-Yn-hkn" eventType="touchUpInside" id="7qE-cz-LEN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="qol-mm-9Ll" id="dsg-EJ-8N1"/>
+                        <outlet property="passwordField" destination="dj8-1s-tR4" id="c9D-uR-j8E"/>
+                        <outlet property="registerButton" destination="8Ss-9u-941" id="1En-ow-R8Q"/>
+                        <outlet property="usernameField" destination="MmG-1M-rfg" id="eXd-wZ-Lv2"/>
+                        <segue destination="eni-Yn-hkn" kind="show" identifier="Login" id="i1r-dF-wiz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FxB-MO-XnA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="-645"/>
         </scene>
     </scenes>
     <resources>
@@ -537,6 +609,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="glK-T1-cir"/>
-        <segue reference="NEi-9r-0Fa"/>
+        <segue reference="XSD-wM-syv"/>
     </inferredMetricsTieBreakers>
 </document>
