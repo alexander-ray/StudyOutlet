@@ -34,7 +34,7 @@ class Test {
     // Returns array of questions
     func getQuestions(completionHandler: @escaping ([question]?) -> Void) {
         // Endpoint url
-        let url = "https://studyoutlet.herokuapp.com/question/questions"
+        let url = "https://studyoutlet.herokuapp.com/api/questions"
         
         var arr = [question]()
         
