@@ -27,14 +27,11 @@ struct User: Model {
         //let validatedPassword: Valid<PasswordValidator> = try credentials.password.validated()
         //self.password = BCrypt.hash(password: validatedPassword.value)
         self.password = BCrypt.hash(password: credentials.password)
-        self.accessKey = URandom().secureToken
+        self.accessKey = URandom().secureToken // Create token randomly
     }
     
     init(node: Node, in context: Context) throws{
         id = try node.extract("id")
-        //username = try node.extract("username") as String
-        //let passwordString = try node.extract("password") as String
-        //password = passwordString
         username = try node.extract("username")
         password = try node.extract("password")
         accessKey = try node.extract("access_key")
@@ -52,7 +49,7 @@ struct User: Model {
     
     static func getAccessKey(username: String) throws -> String {
         var user: User?
-        user = try User.query().filter("username", username).first()
+        user = try User.query().filter("username", username).first() // Try to find username in database
         return (user?.accessKey)!
     }
     
@@ -92,6 +89,7 @@ extension User: Auth.User {
             // Used for session authentication
             case let credentials as Identifier:
                 user = try User.find(credentials.id)
+            // Access token checking
             case let accessToken as AccessToken:
                 user = try User.query().filter("access_key", accessToken.string).first()
             default:

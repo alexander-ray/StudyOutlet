@@ -13,11 +13,6 @@ drop.preparations.append(Question.self)
 drop.preparations.append(User.self)
 drop.middleware.append(AuthMiddleware(user: User.self))
 
-
-//let question = QuestionController()
-//question.addRoutes(drop: drop)
-//let user = UserController()
-//user.addRoutes(drop: drop)
 let protect = ProtectMiddleware(error: Abort.custom(status: .unauthorized, message: "Unauthorized"))
 let userController = UserController()
 let questionController = QuestionConroller()
@@ -34,11 +29,11 @@ drop.group("api") { api in
      */
     api.post("login", handler: userController.login)
     
-    
+    // Protected user endpoints
     api.group(BearerAuthenticationMiddleware(), protect) { user in
         user.get("users", handler: userController.getUsers)
     }
-    
+    // Protected question endpoints
     api.group(BearerAuthenticationMiddleware(), protect) { question in
         question.post("questions", handler: questionController.addQuestion)
         question.get("questions", handler: questionController.getQuestions)

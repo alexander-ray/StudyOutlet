@@ -21,7 +21,7 @@ final class UserController {
     
     // Register user
     func register(request: Request) throws -> ResponseRepresentable {
-        // Get info
+        // Get username and password from url
         guard let username = request.formURLEncoded?["username"]?.string,
             let password = request.formURLEncoded?["password"]?.string else {
                 return "Missing username or password"
@@ -29,7 +29,7 @@ final class UserController {
         let credentials = UsernamePassword(username: username, password: password)
 
         do {
-            try _ = User.register(credentials: credentials)
+            try _ = User.register(credentials: credentials) // Register and throw away result
             try request.auth.login(credentials)
             return username
         } catch let e as TurnstileError {
@@ -38,18 +38,16 @@ final class UserController {
     }
     // User login
     func login(request: Request) throws -> ResponseRepresentable {
-        // Get info
-        //let user = try User(node: request.json)
-        //let username = user.username
-        //let password = user.password
+        // Get username and password from url
         guard let username = request.formURLEncoded?["username"]?.string,
             let password = request.formURLEncoded?["password"]?.string else {
                 return "Missing username or password"
         }
-        // Try to login
         let credentials = UsernamePassword(username: username, password: password)
         do {
-            try request.auth.login(credentials)
+            try request.auth.login(credentials) // Try to login
+            // Get access key for user
+            // Will have successfully logged in
             let accessKey = try User.getAccessKey(username: username)
             return accessKey
         } catch let e as TurnstileError {

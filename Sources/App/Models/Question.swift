@@ -67,15 +67,3 @@ final class Question: Model {
         try database.delete("questions")
     }
 }
-
-// Helper functions
-/*extension Question {
-    // Data to string is valid conversion
-    // Data just sequence of bytes
-    static func dataToString(_ data: Data) -> String {
-        return String(data: data, encoding: .utf8)!
-    }
-    static func stringToData(_ dataString: String) -> Data {
-        return dataString.data(using: .utf8)!
-    }
-}*/
