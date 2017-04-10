@@ -48,7 +48,7 @@ class LoginViewController: UIViewController {
             if let key = response.value {
                 do {
                     // If credentials are valid
-                    if (response.response?.statusCode == 200 && response.description != "SUCCESS: Invalid Credentials") {
+                    if (response.response?.statusCode == 200 && response.description != "SUCCESS: Invalid Credentials" && response.description != "SUCCESS: Missing username or password") {
                         print(response.description)
                         defaults.set(key, forKey: "api_access_key")
                         // Update authorization header for API calls
