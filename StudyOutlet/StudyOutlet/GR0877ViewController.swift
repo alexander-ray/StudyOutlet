@@ -23,26 +23,6 @@ class GR0877ViewController: UIViewController {
     @IBOutlet weak var StopButtonOutlet: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBAction func Button_BackToOPEMenu(_ sender: Any)
-    {
-        performSegue(withIdentifier: "BackToOPEMenu", sender: self)
-    }
-    @IBAction func StartAction(_ sender: Any)
-    {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(GR0877ViewController.counter), userInfo: nil, repeats: true)
-        
-        StartImageOutlet.isHidden = true
-        StartButtonOutlet.isHidden = true
-    }
-    @IBAction func StopAction(_ sender: Any)
-    {
-        timer.invalidate()
-        minutes = 170
-        countMinute.text = "170 min"
-        StartImageOutlet.isHidden = false
-        StartButtonOutlet.isHidden = false
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         CountDown.text = String(dDate) + " Days Until next Test"
@@ -55,8 +35,31 @@ class GR0877ViewController: UIViewController {
                 self.imageView.image = question
             }
         }
+    }
+    
+    // --------------------
+    // Code for timer:
+    // --------------------
+    @IBAction func Button_BackToOPEMenu(_ sender: Any)
+    {
+        performSegue(withIdentifier: "BackToOPEMenu", sender: self)
+    }
+    
+    @IBAction func StartAction(_ sender: Any)
+    {
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GR0877ViewController.counter), userInfo: nil, repeats: true)
         
-        
+        StartImageOutlet.isHidden = true
+        StartButtonOutlet.isHidden = true
+    }
+    
+    @IBAction func StopAction(_ sender: Any)
+    {
+        timer.invalidate()
+        minutes = 170
+        countMinute.text = "170 min"
+        StartImageOutlet.isHidden = false
+        StartButtonOutlet.isHidden = false
     }
 
     func counter()
@@ -71,4 +74,98 @@ class GR0877ViewController: UIViewController {
             StartButtonOutlet.isHidden = false
         }
     }
+    // --------------------
+    // Code for timer. end
+    // --------------------
+    
+    
+    
+    // --------------------
+    // Code for choice:
+    // --------------------
+    @IBOutlet weak var ChoiceOutlet: UILabel!
+    
+    @IBAction func A_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "A"
+    }
+    
+    @IBAction func B_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "B"
+    }
+    
+    @IBAction func C_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "C"
+    }
+    
+    @IBAction func D_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "D"
+    }
+    
+    @IBAction func E_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "E"
+    }
+    
+    // --------------------
+    // Code for choice. end
+    // --------------------
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
