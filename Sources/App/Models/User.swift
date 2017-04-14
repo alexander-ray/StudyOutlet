@@ -12,7 +12,8 @@ import HTTP
 struct User: Model {
     // Declarations
     var id: Node?
-    var username: String
+    var email = ""
+    //var username: String
     var password = ""
     var accessKey: String
     //var apiKeyID = URandom().secureToken
@@ -23,16 +24,20 @@ struct User: Model {
     
     // Initializer
     init(credentials: UsernamePassword) throws {
-        self.username = credentials.username
-        //let validatedPassword: Valid<PasswordValidator> = try credentials.password.validated()
-        //self.password = BCrypt.hash(password: validatedPassword.value)
-        self.password = BCrypt.hash(password: credentials.password)
+        //self.username = credentials.username
+        let validatedEmail: Valid<EmailValidator> = try credentials.username.validated()
+        self.email = validatedEmail.value
+        
+        let validatedPassword: Valid<PasswordValidator> = try credentials.password.validated()
+        self.password = BCrypt.hash(password: validatedPassword.value)
+        
         self.accessKey = URandom().secureToken // Create token randomly
     }
     
-    init(node: Node, in context: Context) throws{
+    init(node: Node, in context: Context) throws {
         id = try node.extract("id")
-        username = try node.extract("username")
+        //username = try node.extract("username")
+        email = try node.extract("email")
         password = try node.extract("password")
         accessKey = try node.extract("access_key")
     }
@@ -41,15 +46,16 @@ struct User: Model {
     func makeNode(context: Context) throws -> Node {
         return try Node(node: [
             "id": id,
-            "username": username,
+            //"username": username,
+            "email": email,
             "password": password,
             "access_key": accessKey,
             ])
     }
     
-    static func getAccessKey(username: String) throws -> String {
+    static func getAccessKey(email: String) throws -> String {
         var user: User?
-        user = try User.query().filter("username", username).first() // Try to find username in database
+        user = try User.query().filter("email", email).first() // Try to find username in database
         return (user?.accessKey)!
     }
     
@@ -57,7 +63,7 @@ struct User: Model {
     static func prepare(_ database: Database) throws {
         try database.create("users") { users in
             users.id()
-            users.string("username")
+            users.string("email")
             users.string("password")
             users.string("access_key")
         }
@@ -79,7 +85,7 @@ extension User: Auth.User {
             case let credentials as UsernamePassword:
                 // Try to find user, filtering by username
                 let fetchedUser = try User.query()
-                    .filter("username", credentials.username).first()
+                    .filter("email", credentials.username).first()
                 // If password is not empty and hashes match
                 if let password = fetchedUser?.password,
                     password != "",
@@ -117,7 +123,7 @@ extension User: Auth.User {
         }
         
         // Check if username not already used
-        if try User.query().filter("username", newUser.username).first() == nil {
+        if try User.query().filter("email", newUser.email).first() == nil {
             try newUser.save()
             return newUser
         } else {
