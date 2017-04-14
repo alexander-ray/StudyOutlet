@@ -27,6 +27,7 @@
 		A96FD0F21E90480E00223C39 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FD0F11E90480E00223C39 /* SettingViewController.swift */; };
 		A96FD0F41E90499400223C39 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = A96FD0F31E90499400223C39 /* back.png */; };
 		A96FD0FA1E904EB000223C39 /* OPEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FD0F91E904EB000223C39 /* OPEViewController.swift */; };
+		ED050A0A1EA17B590087CA42 /* LoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED050A091EA17B590087CA42 /* LoginUITests.swift */; };
 		ED0C9AE71E9966AD002BE641 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */; };
 		ED38A7C51E93FF1F009DE871 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C31E93FF1F009DE871 /* Alamofire.framework */; };
 		ED38A7C61E93FF1F009DE871 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */; };
@@ -79,6 +80,7 @@
 		A96FD0F11E90480E00223C39 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = ../SettingViewController.swift; sourceTree = "<group>"; };
 		A96FD0F31E90499400223C39 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		A96FD0F91E904EB000223C39 /* OPEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OPEViewController.swift; sourceTree = "<group>"; };
+		ED050A091EA17B590087CA42 /* LoginUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUITests.swift; sourceTree = "<group>"; };
 		ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED38A7C31E93FF1F009DE871 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				A96FD0D71E90330800223C39 /* StudyOutletUITests.swift */,
 				A96FD0D91E90330800223C39 /* Info.plist */,
+				ED050A091EA17B590087CA42 /* LoginUITests.swift */,
 			);
 			path = StudyOutletUITests;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A96FD0D81E90330800223C39 /* StudyOutletUITests.swift in Sources */,
+				ED050A0A1EA17B590087CA42 /* LoginUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
