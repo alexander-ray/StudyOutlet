@@ -116,6 +116,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="CountDown" destination="W1k-jh-8se" id="hdy-Rz-mwY"/>
                     </connections>
@@ -646,7 +647,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n5I-12-k6K">
                                 <rect key="frame" x="89" y="187" width="197" height="30"/>
@@ -658,6 +659,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSk-63-FHS">
                                 <rect key="frame" x="168" y="270" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="LoginButton"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="sendCredentials:" destination="eni-Yn-hkn" eventType="touchUpInside" id="ddb-NX-aKo"/>
@@ -666,6 +668,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OLV-hM-xbF">
                                 <rect key="frame" x="159" y="318" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="RegisterButton"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="goToRegister:" destination="eni-Yn-hkn" eventType="touchUpInside" id="LML-mQ-6PD"/>
@@ -757,7 +760,7 @@
         <image name="back.png" width="222" height="196"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FTg-aE-AzZ"/>
-        <segue reference="glK-T1-cir"/>
+        <segue reference="XSD-wM-syv"/>
+        <segue reference="tl5-Yr-ZJA"/>
     </inferredMetricsTieBreakers>
 </document>
