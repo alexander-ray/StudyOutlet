@@ -14,8 +14,8 @@ class SettingViewController: UIViewController
     @IBOutlet weak var Input_year: UITextField!
     @IBOutlet weak var Input_month: UITextField!
     @IBOutlet weak var Input_day: UITextField!
-    
     @IBOutlet weak var CountDown: UILabel!
+    @IBOutlet weak var logoutButton: UIButton!
     
     @IBAction func UpdateDate(_ sender: AnyObject)
     {
@@ -27,6 +27,11 @@ class SettingViewController: UIViewController
         dDate = year * 365 + month * 30 + day
         
         CountDown.text = String(dDate) + " Days Until next Test"
+    }
+    @IBAction func logoutAction(_ sender: UIButton) {
+        // Remove access key
+        defaults.set("-1", forKey: "api_access_key")
+        performSegue(withIdentifier: "BackToLogin", sender: self)
     }
     
     override func viewDidLoad() {

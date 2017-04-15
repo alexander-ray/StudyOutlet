@@ -517,11 +517,12 @@
                         <outlet property="C_time_label" destination="OHs-on-Nij" id="xUY-bB-msU"/>
                         <outlet property="C_time_sliderOutlet" destination="bfP-KA-SqP" id="MCw-Zm-kho"/>
                         <outlet property="CountDown" destination="6ex-fG-GhQ" id="4c0-qh-tg0"/>
+                        <outlet property="logoutButton" destination="y0R-ME-THR" id="9Y9-ds-hZh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5y-DS-eXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="1601.649175412294"/>
+            <point key="canvasLocation" x="-927" y="-28"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="MS9-3C-sgc">
@@ -616,6 +617,16 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0R-ME-THR">
+                                <rect key="frame" x="151" y="570" width="73" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutAction:" destination="8gE-UI-A0N" eventType="touchUpInside" id="cUm-PJ-GRj"/>
+                                    <action selector="logoutAction:" destination="QYM-tq-BFz" eventType="touchUpInside" id="n24-xU-9ow"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -624,6 +635,8 @@
                         <outlet property="Input_day" destination="shf-gB-1NQ" id="PDq-Vk-Bd5"/>
                         <outlet property="Input_month" destination="rZl-Bj-dkh" id="e4l-AO-SgA"/>
                         <outlet property="Input_year" destination="9mx-su-fye" id="Fw3-Js-MfA"/>
+                        <outlet property="logoutButton" destination="y0R-ME-THR" id="MTg-G3-tPS"/>
+                        <segue destination="eni-Yn-hkn" kind="show" identifier="BackToLogin" id="kGP-gB-uQ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enR-wr-utm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -719,6 +732,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ss-9u-941">
                                 <rect key="frame" x="159" y="270" width="57" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="RegisterButton"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="sendCredentials:" destination="Lp7-Hc-5pD" eventType="touchUpInside" id="fqJ-rs-L9G"/>
@@ -727,6 +741,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qol-mm-9Ll">
                                 <rect key="frame" x="141" y="318" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" label="BackToLoginButton"/>
                                 <state key="normal" title="Back to Login"/>
                                 <connections>
                                     <action selector="goToLogin:" destination="Lp7-Hc-5pD" eventType="touchUpInside" id="Oed-IH-aJE"/>
@@ -760,7 +775,8 @@
         <image name="back.png" width="222" height="196"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="XSD-wM-syv"/>
+        <segue reference="iGV-Us-dPt"/>
+        <segue reference="kGP-gB-uQ8"/>
         <segue reference="tl5-Yr-ZJA"/>
     </inferredMetricsTieBreakers>
 </document>

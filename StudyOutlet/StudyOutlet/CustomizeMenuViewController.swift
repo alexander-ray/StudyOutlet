@@ -14,6 +14,11 @@ class CustomizeMenuViewController: UIViewController {
     
     @IBOutlet weak var CountDown: UILabel!
     
+    @IBAction func BackToMainMenu(_ sender: Any)
+    {
+        performSegue(withIdentifier: "BackToMainCE", sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,11 +28,6 @@ class CustomizeMenuViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func BackToMainMenu(_ sender: Any)
-    {
-        performSegue(withIdentifier: "BackToMainCE", sender: self)
     }
     
     // ------------------------------
