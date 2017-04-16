@@ -32,6 +32,7 @@
 		ED0C9AE71E9966AD002BE641 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */; };
 		ED38A7C51E93FF1F009DE871 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C31E93FF1F009DE871 /* Alamofire.framework */; };
 		ED38A7C61E93FF1F009DE871 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */; };
+		ED8CD5C21EA3F5EA0086F1B4 /* DatePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8CD5C11EA3F5EA0086F1B4 /* DatePickerUITests.swift */; };
 		ED8CFE171E9A1D9C005650B1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8CFE161E9A1D9C005650B1 /* RegisterViewController.swift */; };
 		EDFAEBE41E984BA000C32E57 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAEBE31E984BA000C32E57 /* Test.swift */; };
 		EDFAEBE71E984BCD00C32E57 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAEBE61E984BCD00C32E57 /* Helper.swift */; };
@@ -86,6 +87,7 @@
 		ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED38A7C31E93FF1F009DE871 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		ED38A7C41E93FF1F009DE871 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		ED8CD5C11EA3F5EA0086F1B4 /* DatePickerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerUITests.swift; sourceTree = "<group>"; };
 		ED8CFE161E9A1D9C005650B1 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EDFAEBE31E984BA000C32E57 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		EDFAEBE61E984BCD00C32E57 /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				A96FD0D91E90330800223C39 /* Info.plist */,
 				ED050A091EA17B590087CA42 /* LoginUITests.swift */,
 				ED050A0C1EA17D9C0087CA42 /* RegisterUITests.swift */,
+				ED8CD5C11EA3F5EA0086F1B4 /* DatePickerUITests.swift */,
 			);
 			path = StudyOutletUITests;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				A96FD0D81E90330800223C39 /* StudyOutletUITests.swift in Sources */,
 				ED050A0D1EA17D9C0087CA42 /* RegisterUITests.swift in Sources */,
 				ED050A0A1EA17B590087CA42 /* LoginUITests.swift in Sources */,
+				ED8CD5C21EA3F5EA0086F1B4 /* DatePickerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
