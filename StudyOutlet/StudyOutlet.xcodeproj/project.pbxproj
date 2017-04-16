@@ -185,14 +185,14 @@
 		ED0C9AE51E996691002BE641 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */,
+				ED8CFE161E9A1D9C005650B1 /* RegisterViewController.swift */,
 				A96FD0B91E90330800223C39 /* ViewController.swift */,
 				A96FD0F11E90480E00223C39 /* SettingViewController.swift */,
 				A96FD0F91E904EB000223C39 /* OPEViewController.swift */,
 				A9011C8F1E94767E0051CBA7 /* GR0877ViewController.swift */,
-				A9011C971E94B3540051CBA7 /* ComingSoonViewController.swift */,
-				ED0C9AE61E9966AD002BE641 /* LoginViewController.swift */,
-				ED8CFE161E9A1D9C005650B1 /* RegisterViewController.swift */,
 				A96465D51E9AC50800C8EB7B /* CustomizeMenuViewController.swift */,
+				A9011C971E94B3540051CBA7 /* ComingSoonViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
