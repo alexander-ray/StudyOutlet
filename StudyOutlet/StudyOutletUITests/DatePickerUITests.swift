@@ -44,29 +44,32 @@ class DatePickerUITests: XCTestCase {
     
     // MARK: Login
     
-    // Basic "good" input for a register
+    // Basic "good" input 
     // Should continue to main menu
     func testPositive1() {
         let updateButton = app.buttons["UpdateButton"]
-        
+        // Good date
         app.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "May 19")
         app.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: "6")
         app.pickerWheels.element(boundBy: 2).adjust(toPickerWheelValue: "30")
         app.pickerWheels.element(boundBy: 3).adjust(toPickerWheelValue: "PM")
 
         updateButton.tap()
+        // Goes to main menu
         XCTAssert(app.images["GRE_Title.png"].exists)
     }
     
     func testNegative1() {
         let updateButton = app.buttons["UpdateButton"]
         
+        // Date is way too early
         app.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "Mar 19")
         app.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: "6")
         app.pickerWheels.element(boundBy: 2).adjust(toPickerWheelValue: "30")
         app.pickerWheels.element(boundBy: 3).adjust(toPickerWheelValue: "PM")
         
         updateButton.tap()
+        // Doesn't go to the next page
         XCTAssert(!app.images["GRE_Title.png"].exists)
     }
 

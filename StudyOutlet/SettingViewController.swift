@@ -34,12 +34,10 @@ class SettingViewController: UIViewController
         }
         else {
             let calendar = Calendar.current
-            let year  = datePicker.calendar.component(.year, from: datePicker.date) - calendar.component(.year, from: currentDate)
-            let month = datePicker.calendar.component(.month, from: datePicker.date) - calendar.component(.month, from: currentDate)
-            let day   = datePicker.calendar.component(.day, from: datePicker.date) - calendar.component(.day, from: currentDate)
-            dDate = year * 365 + month * 30 + day
-            print(dDate)
-            CountDown.text = String(dDate) + " Days Until next Test"
+            
+            // Getting number of days between current and date picker
+            let components = calendar.dateComponents([.day], from: currentDate, to: datePicker.date)
+            CountDown.text = String(components.day!) + " Days Until next Test"
             
             // Return back to main menu
             performSegue(withIdentifier: "BackToMenu", sender: self)
