@@ -42,8 +42,6 @@ class DatePickerUITests: XCTestCase {
         super.tearDown()
     }
     
-    // MARK: Login
-    
     // Basic "good" input 
     // Should continue to main menu
     func testPositive1() {
