@@ -13,6 +13,7 @@ class GR0877ViewController: UIViewController {
     var minutes = 170
     var timer = Timer()
     var test = Test(testName: "GR0877")
+    var questionIndex = 0
     
     // Outlets
     @IBOutlet weak var CountDown: UILabel!
@@ -22,19 +23,22 @@ class GR0877ViewController: UIViewController {
     @IBOutlet weak var StartButtonOutlet: UIButton!
     @IBOutlet weak var StopButtonOutlet: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageOutlet: UIImageView!
+    
+    
+    @IBOutlet weak var rightImageOutlet: UIImageView!
+    @IBOutlet weak var nextOutlet: UIButton!
+    @IBOutlet weak var leftImageOutlet: UIImageView!
+    @IBOutlet weak var previousOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         CountDown.text = String(dDate) + " Days Until next Test"
         
-        // Populate test's question array
-        test.getQuestions() { arr in
-            self.test.questionArray = arr!
-            if (self.test.questionArray.count > 0) {
-                let question = self.test.questionArray[0].question
-                self.imageView.image = question
-            }
-        }
+        rightImageOutlet.isHidden = true
+        nextOutlet.isHidden = true
+        leftImageOutlet.isHidden = true
+        previousOutlet.isHidden = true
     }
     
     // --------------------
@@ -49,8 +53,22 @@ class GR0877ViewController: UIViewController {
     {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GR0877ViewController.counter), userInfo: nil, repeats: true)
         
+        test.getQuestions() { arr in
+            self.test.questionArray = arr!
+            if (self.test.questionArray.count > 0) {
+                let question = self.test.questionArray[self.questionIndex].question
+                self.imageView.image = question
+            }
+        }
+        
+//        self.questionIndex
+        
         StartImageOutlet.isHidden = true
         StartButtonOutlet.isHidden = true
+        imageOutlet.isHidden = false
+        
+        rightImageOutlet.isHidden = false
+        nextOutlet.isHidden = false
     }
     
     @IBAction func StopAction(_ sender: Any)
@@ -60,6 +78,12 @@ class GR0877ViewController: UIViewController {
         countMinute.text = "170 min"
         StartImageOutlet.isHidden = false
         StartButtonOutlet.isHidden = false
+        imageOutlet.isHidden = true
+        
+        rightImageOutlet.isHidden = true
+        nextOutlet.isHidden = true
+        leftImageOutlet.isHidden = true
+        previousOutlet.isHidden = true
     }
 
     func counter()
@@ -72,6 +96,12 @@ class GR0877ViewController: UIViewController {
             timer.invalidate()
             StartImageOutlet.isHidden = false
             StartButtonOutlet.isHidden = false
+            imageOutlet.isHidden = true
+            
+            rightImageOutlet.isHidden = true
+            nextOutlet.isHidden = true
+            leftImageOutlet.isHidden = true
+            previousOutlet.isHidden = true
         }
     }
     // --------------------
@@ -110,10 +140,71 @@ class GR0877ViewController: UIViewController {
         ChoiceOutlet.text = "E"
     }
     
+    @IBAction func nochoice_Clicker(_ sender: Any)
+    {
+        ChoiceOutlet.text = "--"
+    }
     // --------------------
     // Code for choice. end
     // --------------------
     
+    
+    
+    // -------------------------------
+    // Code for switch Question:
+    // -------------------------------
+    @IBAction func next_Question(_ sender: Any)
+    {
+        if (questionIndex < 5)
+        {
+            questionIndex = questionIndex + 1
+            
+            test.getQuestions() { arr in
+                self.test.questionArray = arr!
+                if (self.test.questionArray.count > 0) {
+                    let question = self.test.questionArray[self.questionIndex].question
+                    self.imageView.image = question
+                }
+            }
+            
+            leftImageOutlet.isHidden = false
+            previousOutlet.isHidden = false
+            
+            if (questionIndex == 4)
+            {
+                rightImageOutlet.isHidden = true
+                nextOutlet.isHidden = true
+            }
+        }
+    }
+//    self.questionIndex
+    @IBAction func previous_Question(_ sender: Any)
+    {
+        if (questionIndex > 0)
+        {
+            questionIndex = questionIndex - 1
+            
+            test.getQuestions() { arr in
+                self.test.questionArray = arr!
+                if (self.test.questionArray.count > 0) {
+                    let question = self.test.questionArray[self.questionIndex].question
+                    self.imageView.image = question
+                }
+            }
+            
+            rightImageOutlet.isHidden = false
+            nextOutlet.isHidden = false
+            
+            if (questionIndex == 0)
+            {
+                leftImageOutlet.isHidden = true
+                previousOutlet.isHidden = true
+            }
+        }
+    }
+    // -------------------------------
+    // Code for switch Question. end
+    // -------------------------------
 }
 
 
