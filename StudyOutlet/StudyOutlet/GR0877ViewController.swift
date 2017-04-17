@@ -8,14 +8,18 @@
 
 import UIKit
 
-class GR0877ViewController: UIViewController {
+class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var minutes = 170
     var timer = Timer()
     var test = Test(testName: "GR0877")
     var questionIndex = 0
+    var numQuestions = 0
+    var currentAnswer = ""
     
-    // Outlets
+    let answers = ["A", "B", "C", "D", "E"]
+    
+    // MARK: Outlets
     @IBOutlet weak var CountDown: UILabel!
     @IBOutlet weak var countMinute: UILabel!
     @IBOutlet weak var StartImageOutlet: UIImageView!
@@ -25,25 +29,15 @@ class GR0877ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageOutlet: UIImageView!
     
-    
     @IBOutlet weak var rightImageOutlet: UIImageView!
     @IBOutlet weak var nextOutlet: UIButton!
     @IBOutlet weak var leftImageOutlet: UIImageView!
     @IBOutlet weak var previousOutlet: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        CountDown.text = String(dDate) + " Days Until next Test"
-        
-        rightImageOutlet.isHidden = true
-        nextOutlet.isHidden = true
-        leftImageOutlet.isHidden = true
-        previousOutlet.isHidden = true
-    }
+    @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var answerPicker: UIPickerView!
     
-    // --------------------
-    // Code for timer:
-    // --------------------
+    // MARK: Actions
     @IBAction func Button_BackToOPEMenu(_ sender: Any)
     {
         performSegue(withIdentifier: "BackToOPEMenu", sender: self)
@@ -53,22 +47,11 @@ class GR0877ViewController: UIViewController {
     {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GR0877ViewController.counter), userInfo: nil, repeats: true)
         
-        test.getQuestions() { arr in
-            self.test.questionArray = arr!
-            if (self.test.questionArray.count > 0) {
-                let question = self.test.questionArray[self.questionIndex].question
-                self.imageView.image = question
-            }
-        }
-        
-//        self.questionIndex
-        
         StartImageOutlet.isHidden = true
         StartButtonOutlet.isHidden = true
         imageOutlet.isHidden = false
         
-        rightImageOutlet.isHidden = false
-        nextOutlet.isHidden = false
+        answerPicker.isHidden = false
     }
     
     @IBAction func StopAction(_ sender: Any)
@@ -85,7 +68,60 @@ class GR0877ViewController: UIViewController {
         leftImageOutlet.isHidden = true
         previousOutlet.isHidden = true
     }
+    @IBAction func submit(_ sender: UIButton) {
+        if (currentAnswer == test.questionArray[questionIndex].answer) {
+            presentCorrectAlert()
+        }
+        else {
+            presentIncorrectAlert()
+        }
+    }
 
+    // MARK: Picker
+    // returns the number of 'columns' to display.
+    func numberOfComponents(in: UIPickerView) -> Int{
+        return 1
+    }
+    
+    // returns the # of rows in each component..
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return answers.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return answers[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        currentAnswer = answers[row]
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        CountDown.text = String(dDate) + " Days Until next Test"
+        
+        test.getQuestions() { arr in
+            self.test.questionArray = arr!
+            self.numQuestions = self.test.questionArray.count
+            if (self.numQuestions > 0) {
+                let question = self.test.questionArray[0].question
+                self.imageView.image = question
+            }
+        }
+        
+        imageOutlet.isHidden = true
+        rightImageOutlet.isHidden = true
+        nextOutlet.isHidden = true
+        leftImageOutlet.isHidden = true
+        previousOutlet.isHidden = true
+        
+        answerPicker.isHidden = true
+        answerPicker.delegate = self
+        answerPicker.dataSource = self        
+    }
+
+    
     func counter()
     {
         minutes -= 1
@@ -104,107 +140,47 @@ class GR0877ViewController: UIViewController {
             previousOutlet.isHidden = true
         }
     }
-    // --------------------
-    // Code for timer. end
-    // --------------------
     
-    
-    
-    // --------------------
-    // Code for choice:
-    // --------------------
-    @IBOutlet weak var ChoiceOutlet: UILabel!
-    
-    @IBAction func A_Clicker(_ sender: Any)
-    {
-        ChoiceOutlet.text = "A"
-    }
-    
-    @IBAction func B_Clicker(_ sender: Any)
-    {
-        ChoiceOutlet.text = "B"
-    }
-    
-    @IBAction func C_Clicker(_ sender: Any)
-    {
-        ChoiceOutlet.text = "C"
-    }
-    
-    @IBAction func D_Clicker(_ sender: Any)
-    {
-        ChoiceOutlet.text = "D"
-    }
-    
-    @IBAction func E_Clicker(_ sender: Any)
-    {
-        ChoiceOutlet.text = "E"
-    }
-    
-    @IBAction func nochoice_Clicker(_ sender: Any)
-    {
-        ChoiceOutlet.text = "--"
-    }
-    // --------------------
-    // Code for choice. end
-    // --------------------
-    
-    
-    
-    // -------------------------------
-    // Code for switch Question:
-    // -------------------------------
-    @IBAction func next_Question(_ sender: Any)
-    {
-        if (questionIndex < 5)
+    func nextQuestion() {
+        if (questionIndex < numQuestions)
         {
             questionIndex = questionIndex + 1
-            
-            test.getQuestions() { arr in
-                self.test.questionArray = arr!
-                if (self.test.questionArray.count > 0) {
-                    let question = self.test.questionArray[self.questionIndex].question
-                    self.imageView.image = question
-                }
-            }
-            
-            leftImageOutlet.isHidden = false
-            previousOutlet.isHidden = false
-            
-            if (questionIndex == 4)
-            {
-                rightImageOutlet.isHidden = true
-                nextOutlet.isHidden = true
-            }
+            let question = self.test.questionArray[self.questionIndex].question
+            self.imageView.image = question
         }
+
     }
-//    self.questionIndex
-    @IBAction func previous_Question(_ sender: Any)
-    {
+    func previousQuestion() {
         if (questionIndex > 0)
         {
             questionIndex = questionIndex - 1
-            
-            test.getQuestions() { arr in
-                self.test.questionArray = arr!
-                if (self.test.questionArray.count > 0) {
-                    let question = self.test.questionArray[self.questionIndex].question
-                    self.imageView.image = question
-                }
-            }
-            
-            rightImageOutlet.isHidden = false
-            nextOutlet.isHidden = false
-            
-            if (questionIndex == 0)
-            {
-                leftImageOutlet.isHidden = true
-                previousOutlet.isHidden = true
-            }
+            let question = self.test.questionArray[self.questionIndex].question
+            self.imageView.image = question
         }
     }
-    // -------------------------------
-    // Code for switch Question. end
-    // -------------------------------
+    
+    func presentCorrectAlert() {
+        // Set up "invalid date" alert
+        let alertController = UIAlertController(title: "Correct!", message: "", preferredStyle: UIAlertControllerStyle.alert)
+        let action = UIAlertAction(title: "Next Question", style: UIAlertActionStyle.default)
+        {
+            (result : UIAlertAction) -> Void in
+            self.nextQuestion()
+        }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentIncorrectAlert() {
+        // Set up "invalid date" alert
+        let alertController = UIAlertController(title: "Incorrect!", message: "Please try again.", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+        {
+            (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 
