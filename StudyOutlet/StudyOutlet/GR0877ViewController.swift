@@ -153,14 +153,13 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if (minutes == 0)
         {
             timer.invalidate()
-            StartImageOutlet.isHidden = false
-            StartButtonOutlet.isHidden = false
-            imageOutlet.isHidden = true
-            
-            rightImageOutlet.isHidden = true
-            nextOutlet.isHidden = true
-            leftImageOutlet.isHidden = true
-            previousOutlet.isHidden = true
+            let alertController = UIAlertController(title: "", message: "You ran out of time!", preferredStyle: UIAlertControllerStyle.alert)
+            let returnAction = UIAlertAction(title: "Return to menu", style: UIAlertActionStyle.default) {
+                (result : UIAlertAction) -> Void in
+                self.performSegue(withIdentifier: "BackToOPEMenu", sender: self)
+            }
+            alertController.addAction(returnAction)
+            self.present(alertController, animated: true, completion: nil)
         }
     }
     
