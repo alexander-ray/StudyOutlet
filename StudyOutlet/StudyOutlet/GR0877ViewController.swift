@@ -99,7 +99,9 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CountDown.text = String(dDate) + " Days Until next Test"
+        let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
+        let days = Helper.numDaysBeforeTest(testDate: date)
+        CountDown.text = String(days) + " Days Until next Test"
         
         test.getQuestions() { arr in
             self.test.questionArray = arr!

@@ -18,7 +18,6 @@
 		A96FD0BF1E90330800223C39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A96FD0BE1E90330800223C39 /* Assets.xcassets */; };
 		A96FD0C21E90330800223C39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96FD0C01E90330800223C39 /* LaunchScreen.storyboard */; };
 		A96FD0CD1E90330800223C39 /* StudyOutletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FD0CC1E90330800223C39 /* StudyOutletTests.swift */; };
-		A96FD0D81E90330800223C39 /* StudyOutletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96FD0D71E90330800223C39 /* StudyOutletUITests.swift */; };
 		A96FD0E61E90365C00223C39 /* ETSGRE.png in Resources */ = {isa = PBXBuildFile; fileRef = A96FD0E51E90365C00223C39 /* ETSGRE.png */; };
 		A96FD0E81E90374600223C39 /* GRE_Title.png in Resources */ = {isa = PBXBuildFile; fileRef = A96FD0E71E90374600223C39 /* GRE_Title.png */; };
 		A96FD0EA1E903D0900223C39 /* Outline.png in Resources */ = {isa = PBXBuildFile; fileRef = A96FD0E91E903D0900223C39 /* Outline.png */; };
@@ -74,7 +73,6 @@
 		A96FD0CC1E90330800223C39 /* StudyOutletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyOutletTests.swift; sourceTree = "<group>"; };
 		A96FD0CE1E90330800223C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96FD0D31E90330800223C39 /* StudyOutletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StudyOutletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A96FD0D71E90330800223C39 /* StudyOutletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyOutletUITests.swift; sourceTree = "<group>"; };
 		A96FD0D91E90330800223C39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96FD0E51E90365C00223C39 /* ETSGRE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ETSGRE.png; sourceTree = "<group>"; };
 		A96FD0E71E90374600223C39 /* GRE_Title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GRE_Title.png; sourceTree = "<group>"; };
@@ -173,7 +171,6 @@
 		A96FD0D61E90330800223C39 /* StudyOutletUITests */ = {
 			isa = PBXGroup;
 			children = (
-				A96FD0D71E90330800223C39 /* StudyOutletUITests.swift */,
 				A96FD0D91E90330800223C39 /* Info.plist */,
 				ED050A091EA17B590087CA42 /* LoginUITests.swift */,
 				ED050A0C1EA17D9C0087CA42 /* RegisterUITests.swift */,
@@ -428,7 +425,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A96FD0D81E90330800223C39 /* StudyOutletUITests.swift in Sources */,
 				ED050A0D1EA17D9C0087CA42 /* RegisterUITests.swift in Sources */,
 				ED050A0A1EA17B590087CA42 /* LoginUITests.swift in Sources */,
 				ED8CD5C21EA3F5EA0086F1B4 /* DatePickerUITests.swift in Sources */,

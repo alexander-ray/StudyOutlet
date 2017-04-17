@@ -33,11 +33,8 @@ class SettingViewController: UIViewController
             CountDown.text = String(0) + " Days Until next Test"
         }
         else {
-            let calendar = Calendar.current
-            
-            // Getting number of days between current and date picker
-            let components = calendar.dateComponents([.day], from: currentDate, to: datePicker.date)
-            CountDown.text = String(components.day!) + " Days Until next Test"
+            defaults.set(datePicker.date, forKey: "next_test_date")
+            CountDown.text = String(Helper.numDaysBeforeTest(testDate: datePicker.date)) + " Days Until next Test"
             
             // Return back to main menu
             performSegue(withIdentifier: "BackToMenu", sender: self)

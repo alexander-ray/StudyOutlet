@@ -15,8 +15,9 @@ class ComingSoonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        CountDown.text = String(dDate) + " Days Until next Test"
+        let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
+        let days = Helper.numDaysBeforeTest(testDate: date)
+        CountDown.text = String(days) + " Days Until next Test"
     }
 
     override func didReceiveMemoryWarning() {
