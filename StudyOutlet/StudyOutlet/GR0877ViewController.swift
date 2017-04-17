@@ -11,11 +11,11 @@ import UIKit
 class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var minutes = defaults.integer(forKey: "test_length")
+    var numQuestions = defaults.integer(forKey: "num_questions")
 
     var timer = Timer()
     var test = Test(testName: "GR0877")
     var questionIndex = 0
-    var numQuestions = 0
     var currentAnswer = ""
     
     let answers = ["A", "B", "C", "D", "E"]
@@ -112,6 +112,10 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         if (minutes == 0) {
             minutes = 170
         }
+        if (numQuestions == 0) {
+            numQuestions = 6
+        }
+        
         countMinute.text = String(minutes) + " min"
         
         let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
@@ -120,7 +124,6 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         test.getQuestions() { arr in
             self.test.questionArray = arr!
-            self.numQuestions = self.test.questionArray.count
             if (self.numQuestions > 0) {
                 let question = self.test.questionArray[0].question
                 self.imageView.image = question
@@ -134,7 +137,6 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         previousOutlet.isHidden = true
         StopImageOutlet.isHidden = true
         StopButtonOutlet.isHidden = true
-        
         
         submitButton.isHidden = true
         answerPicker.isHidden = true

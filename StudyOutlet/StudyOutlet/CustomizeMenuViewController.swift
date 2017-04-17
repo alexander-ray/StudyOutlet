@@ -9,6 +9,7 @@
 import UIKit
 
 var C_time = 20
+var numQuestions = 6
 
 class CustomizeMenuViewController: UIViewController {
     
@@ -17,6 +18,7 @@ class CustomizeMenuViewController: UIViewController {
     @IBAction func BackToMainMenu(_ sender: Any)
     {
         defaults.set(C_time, forKey: "test_length")
+        defaults.set(numQuestions, forKey: "num_questions")
         performSegue(withIdentifier: "BackToMainCE", sender: self)
     }
     
@@ -38,7 +40,6 @@ class CustomizeMenuViewController: UIViewController {
     // ------------------------------
     
     @IBOutlet weak var C_time_label: UILabel!
-    
     @IBOutlet weak var C_time_sliderOutlet: UISlider!
     @IBAction func C_time_slider(_ sender: UISlider)
     {
@@ -46,8 +47,13 @@ class CustomizeMenuViewController: UIViewController {
         C_time_label.text = String(C_time) + " minutes"
     }
     
+    @IBOutlet weak var numberOfQuestionsLabel: UILabel!
+    @IBOutlet weak var questionsSliderOutlet: UISlider!
     
-    
+    @IBAction func questionsSlider(_ sender: UISlider) {
+        numQuestions = Int(sender.value)
+        numberOfQuestionsLabel.text = String(numQuestions) + " questions"
+    }
 
 }
 

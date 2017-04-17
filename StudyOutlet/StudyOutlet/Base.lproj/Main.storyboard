@@ -451,14 +451,42 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="20 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHs-on-Nij">
-                                <rect key="frame" x="129" y="111" width="142" height="21"/>
+                                <rect key="frame" x="57" y="125" width="142" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uFv-9h-Tkd">
+                                <rect key="frame" x="57" y="97" width="204" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of questions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFb-6M-6p4">
+                                <rect key="frame" x="57" y="210" width="204" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="6" minValue="1" maxValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="8TU-90-pqw">
+                                <rect key="frame" x="55" y="274" width="264" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="questionsSlider:" destination="QYM-tq-BFz" eventType="valueChanged" id="z0b-sV-OWw"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6 questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3T-Nm-b3e">
+                                <rect key="frame" x="57" y="245" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="20" minValue="5" maxValue="170" translatesAutoresizingMaskIntoConstraints="NO" id="bfP-KA-SqP">
-                                <rect key="frame" x="55" y="150" width="264" height="31"/>
+                                <rect key="frame" x="55" y="154" width="264" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="C_time_slider:" destination="QYM-tq-BFz" eventType="valueChanged" id="Tcn-N9-gzQ"/>
@@ -472,11 +500,13 @@
                         <outlet property="C_time_sliderOutlet" destination="bfP-KA-SqP" id="MCw-Zm-kho"/>
                         <outlet property="CountDown" destination="6ex-fG-GhQ" id="4c0-qh-tg0"/>
                         <outlet property="logoutButton" destination="y0R-ME-THR" id="9Y9-ds-hZh"/>
+                        <outlet property="numberOfQuestionsLabel" destination="b3T-Nm-b3e" id="dwX-cz-BAt"/>
+                        <outlet property="questionsSliderOutlet" destination="8TU-90-pqw" id="UYZ-Sl-5eE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5y-DS-eXS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-927" y="38"/>
+            <point key="canvasLocation" x="-927.20000000000005" y="37.331334332833585"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="MS9-3C-sgc">
