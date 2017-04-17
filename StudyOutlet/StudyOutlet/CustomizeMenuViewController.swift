@@ -16,6 +16,7 @@ class CustomizeMenuViewController: UIViewController {
     
     @IBAction func BackToMainMenu(_ sender: Any)
     {
+        defaults.set(C_time, forKey: "test_length")
         performSegue(withIdentifier: "BackToMainCE", sender: self)
     }
     

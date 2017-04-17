@@ -10,7 +10,8 @@ import UIKit
 
 class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
-    var minutes = 170
+    var minutes = defaults.integer(forKey: "test_length")
+
     var timer = Timer()
     var test = Test(testName: "GR0877")
     var questionIndex = 0
@@ -38,17 +39,15 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var answerPicker: UIPickerView!
     
     // MARK: Actions
-    @IBAction func Button_BackToOPEMenu(_ sender: Any)
-    {
-        performSegue(withIdentifier: "BackToOPEMenu", sender: self)
-    }
-    
     @IBAction func StartAction(_ sender: Any)
     {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GR0877ViewController.counter), userInfo: nil, repeats: true)
         
         StartImageOutlet.isHidden = true
         StartButtonOutlet.isHidden = true
+        StopImageOutlet.isHidden = false
+        StopButtonOutlet.isHidden = false
+
         imageOutlet.isHidden = false
         
         answerPicker.isHidden = false
@@ -60,7 +59,7 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         timer.invalidate()
         minutes = 170
 
-        let alertController = UIAlertController(title: "Stop Test", message: "Are you sure you want to stop this test? Your progress will not be saved.", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "", message: "Are you sure you want to stop this test? Your progress will not be saved.", preferredStyle: UIAlertControllerStyle.alert)
         let stopAction = UIAlertAction(title: "Stop", style: UIAlertActionStyle.default) {
             (result : UIAlertAction) -> Void in
             self.performSegue(withIdentifier: "BackToOPEMenu", sender: self)
@@ -109,6 +108,12 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // If there was no data in user defaults
+        if (minutes == 0) {
+            minutes = 170
+        }
+        countMinute.text = String(minutes) + " min"
+        
         let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
         let days = Helper.numDaysBeforeTest(testDate: date)
         CountDown.text = String(days) + " Days Until next Test"
@@ -127,6 +132,9 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         nextOutlet.isHidden = true
         leftImageOutlet.isHidden = true
         previousOutlet.isHidden = true
+        StopImageOutlet.isHidden = true
+        StopButtonOutlet.isHidden = true
+        
         
         submitButton.isHidden = true
         answerPicker.isHidden = true
@@ -172,6 +180,8 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
+    
+    // Alerts
     func presentCorrectAlert() {
         // Set up "invalid date" alert
         let alertController = UIAlertController(title: "Correct!", message: "", preferredStyle: UIAlertControllerStyle.alert)

@@ -310,18 +310,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="back.png" translatesAutoresizingMaskIntoConstraints="NO" id="PUI-Tz-ADN">
-                                <rect key="frame" x="16" y="57" width="36" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvT-iJ-fjn">
-                                <rect key="frame" x="16" y="57" width="36" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="Button_BackToOPEMenu:" destination="FQb-5y-7hw" eventType="touchUpInside" id="EY9-yo-Wzk"/>
-                                    <segue destination="e6u-wX-osI" kind="show" identifier="BackToOPEMenu" id="glK-T1-cir"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ETSGRE.png" translatesAutoresizingMaskIntoConstraints="NO" id="tGC-SK-mKU">
                                 <rect key="frame" x="16" y="642" width="65" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -419,6 +407,7 @@
                         <outlet property="previousOutlet" destination="2cD-Py-3g6" id="rIV-RH-hym"/>
                         <outlet property="rightImageOutlet" destination="21T-nE-Nos" id="dhe-PE-szP"/>
                         <outlet property="submitButton" destination="QM3-Ah-BcB" id="cFM-bf-qlm"/>
+                        <segue destination="e6u-wX-osI" kind="show" identifier="BackToOPEMenu" id="kIP-v6-8lV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nau-kE-5if" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -706,8 +695,8 @@
         <image name="right.png" width="874" height="1198"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="glK-T1-cir"/>
+        <segue reference="FTg-aE-AzZ"/>
         <segue reference="i1r-dF-wiz"/>
-        <segue reference="XSD-wM-syv"/>
+        <segue reference="kIP-v6-8lV"/>
     </inferredMetricsTieBreakers>
 </document>
