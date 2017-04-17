@@ -52,25 +52,35 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         imageOutlet.isHidden = false
         
         answerPicker.isHidden = false
+        submitButton.isHidden = false
     }
     
     @IBAction func StopAction(_ sender: Any)
     {
         timer.invalidate()
         minutes = 170
-        countMinute.text = "170 min"
-        StartImageOutlet.isHidden = false
-        StartButtonOutlet.isHidden = false
-        imageOutlet.isHidden = true
-        
-        rightImageOutlet.isHidden = true
-        nextOutlet.isHidden = true
-        leftImageOutlet.isHidden = true
-        previousOutlet.isHidden = true
+
+        let alertController = UIAlertController(title: "Stop Test", message: "Are you sure you want to stop this test? Your progress will not be saved.", preferredStyle: UIAlertControllerStyle.alert)
+        let stopAction = UIAlertAction(title: "Stop", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            self.performSegue(withIdentifier: "BackToOPEMenu", sender: self)
+        }
+        let backAction = UIAlertAction(title: "Back to Test", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(backAction)
+        alertController.addAction(stopAction)
+        self.present(alertController, animated: true, completion: nil)
     }
+    
     @IBAction func submit(_ sender: UIButton) {
         if (currentAnswer == test.questionArray[questionIndex].answer) {
-            presentCorrectAlert()
+            if (questionIndex == numQuestions - 1) {
+                presentFinalAlert()
+            }
+            else {
+                presentCorrectAlert()
+            }
         }
         else {
             presentIncorrectAlert()
@@ -118,6 +128,7 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         leftImageOutlet.isHidden = true
         previousOutlet.isHidden = true
         
+        submitButton.isHidden = true
         answerPicker.isHidden = true
         answerPicker.delegate = self
         answerPicker.dataSource = self        
@@ -179,6 +190,18 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
         {
             (result : UIAlertAction) -> Void in
+        }
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func presentFinalAlert() {
+        // Set up "invalid date" alert
+        let alertController = UIAlertController(title: "Correct!", message: "You've completed this test!.", preferredStyle: UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title: "Finish", style: UIAlertActionStyle.default)
+        {
+            (result : UIAlertAction) -> Void in
+            self.performSegue(withIdentifier: "BackToOPEMenu", sender: self)
         }
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
