@@ -46,6 +46,7 @@ class RegisterUITests: XCTestCase {
         passwordTextField.typeText("1Aa")
         
         registerButton.tap()
+        sleep(5)
         XCTAssert(app.buttons["LoginButton"].exists)
     }
     
@@ -117,7 +118,6 @@ class RegisterUITests: XCTestCase {
         XCTAssert(!app.buttons["LoginButton"].exists)
     }
     
-    // Basic "good" input for a register
     // when the username already in the database, it won't let people re-register
     // Should stay at register page
     func testNegative5() {

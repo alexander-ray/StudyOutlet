@@ -44,6 +44,7 @@ class LoginUITests: XCTestCase {
         passwordTextField.typeText("1Alex")
         
         loginButton.tap()
+        sleep(5)
         XCTAssert(app.images["GRE_Title.png"].exists)
     }
     // Another "good" input
@@ -58,6 +59,7 @@ class LoginUITests: XCTestCase {
         passwordTextField.typeText("1Alex")
         
         loginButton.tap()
+        sleep(5)
         XCTAssert(app.images["GRE_Title.png"].exists)
     }
     // Another "good" input
@@ -72,6 +74,7 @@ class LoginUITests: XCTestCase {
         passwordTextField.typeText("1Alex")
         
         loginButton.tap()
+        sleep(5)
         XCTAssert(app.images["GRE_Title.png"].exists)
     }
     
