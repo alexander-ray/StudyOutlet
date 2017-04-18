@@ -3,6 +3,14 @@
 Zoë Koppenhofer, Alexander Ray, Woosung Jang, Ryan Whitmer, and Pengqi Yin(Bill)
 ### Vision statement:
 Provide an organized testing framework to help students review.
+### What are we testing?:
+We've developed tests for 3 features: register, login, and a date picker in our app (that needs a date sometime in the future). For registration and login, we test to ensure that our email regex works (correct response for valid & invalid email addresses), that our password regex works (only accepts passwords with at least one uppercase letter and at least one number), and that the app responds correctly for both valid and invalid input. For the date checker, we simply test the app's reaction to a date in the past and a date in the future.
+
+For all of these features, we perform both positive and negative tests across a wide variety of inputs.
+### How to run:
+*Note that this assumes one has cloned the repo and managed all dependencies such that the app will build and run correctly.*
+
+Simply open the app in Xcode and go to the `StudyOutletUITests` group in project navigator. Open the file that tests the desired feature and press the small diamond button near the top of the file in the left gutter. This will run every test in the file (tests can be run individually with the diamond at the line of the test). As tests pass/fail, a green/red icon will appear next to each test.
 ### Automated tests explanation
 To do our automated testing we're using the XCTestCase class provided by XCode. This framework is very similar to the Python framework we used in our Unit Testing lab.
 
