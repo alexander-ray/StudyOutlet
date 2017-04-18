@@ -12,7 +12,9 @@ We did UI testing, where the tests all hinge on what a user would "see" after do
 
 A couple of issues we ran into included accounting for server lag when doing correct logins/registrations (hence the sleeping before checking the result) as well as debugging textfield autocorrect that kept messing with valid login/registration input.
 
-Note that we have demoed our tests to Yogitha, who has seen all tests being run and OKed not providing test output in this doc (as Xcode doesn't give textual feedback. Here is a screenshot to show that the tests run correctly:
+Note that we have demoed our tests to Yogitha, who has seen all tests being run and OKed not providing test output in this doc (as Xcode doesn't give textual feedback). Here is a screenshot to show that the tests run correctly:
+
+![Tests](https://cloud.githubusercontent.com/assets/13969549/25142403/fc0901b4-2423-11e7-80bb-e1ae00341950.png)
 
 The test code can be found [here](StudyOutlet/StudyOutletUITests/).
 
