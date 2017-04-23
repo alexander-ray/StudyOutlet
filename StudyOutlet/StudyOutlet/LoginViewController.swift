@@ -58,7 +58,7 @@ class LoginViewController: UIViewController {
                         self.performSegue(withIdentifier: "MainMenu", sender: self)
                     }
                     else {
-                        // Set up "invalid date" alert
+                        // Set up "invalid login" alert
                         let alert = UIAlertController(title: "Incorrect Login Credentials", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
                         let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
                         {
