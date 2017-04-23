@@ -32,6 +32,7 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var StopButtonOutlet: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageOutlet: UIImageView!
+    @IBOutlet weak var IndexOutlet: UILabel!
     
     @IBOutlet weak var rightImageOutlet: UIImageView!
     @IBOutlet weak var nextOutlet: UIButton!
@@ -54,6 +55,7 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         StopButtonOutlet.isHidden = false
 
         imageOutlet.isHidden = false
+        IndexOutlet.isHidden = false
         
         answerPicker.isHidden = false
         submitButton.isHidden = false
@@ -150,6 +152,7 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         // Button and input setup
         imageOutlet.isHidden = true
+        IndexOutlet.isHidden = true
         rightImageOutlet.isHidden = true
         nextOutlet.isHidden = true
         leftImageOutlet.isHidden = true
@@ -190,6 +193,8 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             questionIndex = questionIndex + 1
             let question = self.test.questionArray[self.questionIndex].question
             self.imageView.image = question
+            
+            IndexOutlet.text = String(questionIndex+1) + "."
         }
 
     }
