@@ -10,10 +10,13 @@ import UIKit
 
 class OPEViewController: UIViewController {
 
+    @IBOutlet weak var CountDown: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        CountDown.text = String(dDate) + " Days Until next Test"
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +30,17 @@ class OPEViewController: UIViewController {
         performSegue(withIdentifier: "BackToMenuOPE", sender: self)
     }
     
-
+    @IBAction func GoToExam0877(_ sender: Any)
+    {
+        performSegue(withIdentifier: "ToGR0877", sender: self)
+    }
+    
+    @IBAction func GoToExam0177(_ sender: Any)
+    {
+        performSegue(withIdentifier: "ToComingSoon", sender: self)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

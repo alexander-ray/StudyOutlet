@@ -8,14 +8,25 @@
 
 import UIKit
 
+var dDate = 0
+
 class ViewController: UIViewController
 {
+    
+    @IBOutlet weak var CountDown: UILabel!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        CountDown.text = String(dDate) + " Days Until next Test"
     }
+    
+//    override func viewDidAppear(_ animated: Bool)
+//    {
+//        CountDown.text = String(dDate) + " Days Until next Test"
+//    }
 
     override func didReceiveMemoryWarning()
     {

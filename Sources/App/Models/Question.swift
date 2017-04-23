@@ -3,18 +3,20 @@ import Fluent
 import Foundation
 
 // Model for a question
-struct Question: Model {
+final class Question: Model {
     // Fields from database to fully represent question
     var id: Node? // Identifier to comform to model
-    // Data to deal with Blob type
-    let question: Data
-    let solution: Data
+    // Question and solution contain base64 png to deal with Blob type
+    let question: String
+    let solution: String
     let answer: String
     let subject: String
     let topic: String
     
+    var exists: Bool = false
+
     // Initialize values
-    init(question: Data, solution: Data, answer: String, subject: String, topic: String) {
+    init(question: String, solution: String, answer: String, subject: String, topic: String) {
         self.question = question
         self.solution = solution
         self.answer = answer
@@ -25,8 +27,10 @@ struct Question: Model {
     // Getting data from database
     init(node: Node, in context: Context) throws {
         id = try node.extract("id")
-        question = try node.extract("question", transform: Question.stringToData)
-        solution = try node.extract("solution", transform: Question.stringToData)
+        question = try node.extract("question")
+        //question = try node.extract("question", transform: Question.stringToData)
+        //solution = try node.extract("solution", transform: Question.stringToData)
+        solution = try node.extract("solution")
         answer = try node.extract("answer")
         subject = try node.extract("subject")
         topic = try node.extract("topic")
@@ -38,8 +42,9 @@ struct Question: Model {
         return try Node(node: [
             "id": id,
             // Node data type can only use strings, ints, etc
-            "question": Question.dataToString(question),
-            "solution": Question.dataToString(solution),
+            "question": question,
+            //"question": question,
+            "solution": solution,
             "answer": answer,
             "subject": subject,
             "topic": topic
@@ -52,7 +57,7 @@ struct Question: Model {
         try database.create("questions") { questions in
             questions.id()
             questions.data("question")
-            questions.string("solution")
+            questions.data("solution")
             questions.string("answer")
             questions.string("subject")
             questions.string("topic")
@@ -60,17 +65,5 @@ struct Question: Model {
     }
     static func revert(_ database: Database) throws {
         try database.delete("questions")
-    }
-}
-
-// Helper functions
-extension Question {
-    // Data to string is valid conversion
-    // Data just sequence of bytes
-    static func dataToString(_ data: Data) -> String {
-        return String(data: data, encoding: String.Encoding.utf8)!
-    }
-    static func stringToData(_ dataString: String) -> Data {
-        return dataString.data(using: .utf8)!
     }
 }

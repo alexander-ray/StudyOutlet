@@ -128,6 +128,12 @@
       "version": "1.5.13"
     },
     {
+      "package": "VaporJWT",
+      "reason": null,
+      "repositoryURL": "https://github.com/siemensikkema/vapor-jwt.git",
+      "version": "0.4.1"
+    },
+    {
       "package": "VaporMySQL",
       "reason": null,
       "repositoryURL": "https://github.com/vapor/mysql-provider.git",
