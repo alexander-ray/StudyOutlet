@@ -14,6 +14,7 @@ class ViewController: UIViewController
 {
     
     @IBOutlet weak var CountDown: UILabel!
+    @IBOutlet weak var ReviewButton: UIButton!
     
     override func viewDidLoad()
     {
@@ -48,6 +49,9 @@ class ViewController: UIViewController
     @IBAction func ToCEMenu(_ sender: Any)
     {
         performSegue(withIdentifier: "ShowCEMenu", sender: self)
+    }
+    @IBAction func Review(_ sender: UIButton) {
+        performSegue(withIdentifier: "Review to Coming Soon", sender: self)
     }
     
     
