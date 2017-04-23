@@ -10,23 +10,41 @@ import UIKit
 
 class SettingViewController: UIViewController
 {
-
-    @IBOutlet weak var Input_year: UITextField!
-    @IBOutlet weak var Input_month: UITextField!
-    @IBOutlet weak var Input_day: UITextField!
-    
     @IBOutlet weak var CountDown: UILabel!
+    @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
     
     @IBAction func UpdateDate(_ sender: AnyObject)
     {
-        let calendar = Calendar.current
         let currentDate = Date()
-        let year  = Int(Input_year.text!)! - calendar.component(.year, from: currentDate)
-        let month = Int(Input_month.text!)! - calendar.component(.month, from: currentDate)
-        let day   = Int(Input_day.text!)! - calendar.component(.day, from: currentDate)
-        dDate = year * 365 + month * 30 + day
+        if (currentDate.compare(datePicker.date) == .orderedDescending) {
+            // Set up "invalid date" alert
+            let alertController = UIAlertController(title: "Invalid Date", message: "Date and time must be in the future.", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default)
+            {
+                (result : UIAlertAction) -> Void in
+                print("You pressed OK")
+            }
+            alertController.addAction(okAction)
+            // Present alert
+            self.present(alertController, animated: true, completion: nil)
+            
+            // Reset countdown
+            CountDown.text = String(0) + " Days Until next Test"
+        }
+        else {
+            defaults.set(datePicker.date, forKey: "next_test_date")
+            CountDown.text = String(Helper.numDaysBeforeTest(testDate: datePicker.date)) + " Days Until next Test"
+            
+            // Return back to main menu
+            performSegue(withIdentifier: "BackToMenu", sender: self)
+        }
         
-        CountDown.text = String(dDate) + " Days Until next Test"
+    }
+    @IBAction func logoutAction(_ sender: UIButton) {
+        // Remove access key
+        defaults.set("-1", forKey: "api_access_key")
+        performSegue(withIdentifier: "BackToLogin", sender: self)
     }
     
     override func viewDidLoad() {
@@ -57,4 +75,11 @@ class SettingViewController: UIViewController
     }
     */
 
+}
+
+extension Date {
+    func daysBetweenDate(toDate: Date) -> Int {
+        let components = Calendar.current.dateComponents([.day], from: self, to: toDate)
+        return components.day ?? 0
+    }
 }

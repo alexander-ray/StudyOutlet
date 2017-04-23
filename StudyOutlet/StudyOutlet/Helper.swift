@@ -28,4 +28,13 @@ class Helper {
             return encoded64.padding(toLength: newLength, withPad: "=", startingAt: 0)
         }
     }
+    
+    static func numDaysBeforeTest(testDate: Date) -> Int {
+        let calendar = Calendar.current
+        let currentDate = Date()
+        // Getting number of days between current and date picker
+        let components = calendar.dateComponents([.day], from: currentDate, to: testDate)
+        
+        return components.day!
+    }
 }

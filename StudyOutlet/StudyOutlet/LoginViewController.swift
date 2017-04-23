@@ -17,7 +17,7 @@ var headers = [
     "Authorization": "Bearer " + (defaults.string(forKey: "api_access_key") ?? "-1") // Set access key from user defaults, -1 if doesn't exist
 ]
 var parameters = [
-    "username": "",
+    "email": "",
     "password": ""
 ]
 
@@ -32,23 +32,25 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func sendCredentials (_ sender: UIButton) {
-        let username = usernameField.text
+        let email = usernameField.text
         let password = passwordField.text
         let url = "https://studyoutlet.herokuapp.com/api/login"
-        parameters["username"] = username
+        parameters["email"] = email
         parameters["password"] = password
         
         // Request with url, JWT, and parameters
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseString { response in
             // Reset
-            parameters["username"] = ""
+            parameters["email"] = ""
             parameters["password"] = ""
 
             // Convert response to string
             if let key = response.value {
                 do {
+                    print(response.description)
                     // If credentials are valid
-                    if (response.response?.statusCode == 200) {
+                    if (response.response?.statusCode == 200 && response.description != "SUCCESS: Invalid Credentials" && response.description != "SUCCESS: Missing username or password") {
+                        print(response.description)
                         defaults.set(key, forKey: "api_access_key")
                         // Update authorization header for API calls
                         headers["Authorization"] = "Bearer " + key

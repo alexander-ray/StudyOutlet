@@ -18,9 +18,9 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        CountDown.text = String(dDate) + " Days Until next Test"
+        let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
+        let days = Helper.numDaysBeforeTest(testDate: date)
+        CountDown.text = String(days) + " Days Until next Test"
     }
     
 //    override func viewDidAppear(_ animated: Bool)
@@ -44,6 +44,12 @@ class ViewController: UIViewController
     {
         performSegue(withIdentifier: "ToOPE", sender: self)
     }
+    
+    @IBAction func ToCEMenu(_ sender: Any)
+    {
+        performSegue(withIdentifier: "ShowCEMenu", sender: self)
+    }
+    
     
 }
 

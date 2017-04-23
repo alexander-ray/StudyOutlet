@@ -18,7 +18,7 @@ let auth = AuthMiddleware(user: User.self){ value in
     return Cookie(
         name: "alex_cookie",
         value: value,
-        expires: Date().addingTimeInterval(60), // 1 minute
+        expires: Date().addingTimeInterval(60*60*5), // 1 minute
         secure: true,
         httpOnly: true
     )

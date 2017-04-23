@@ -25,19 +25,19 @@ class RegisterViewController: UIViewController {
         let username = usernameField.text
         let password = passwordField.text
         let url = "https://studyoutlet.herokuapp.com/api/register"
-        parameters["username"] = username
+        parameters["email"] = username
         parameters["password"] = password
         
         // Request with url, JWT, and parameters
         Alamofire.request(url, method: .post, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseString { response in
             // Reset
-            parameters["username"] = ""
+            parameters["email"] = ""
             parameters["password"] = ""
             
             // Convert response to string
             do {
                 // If credentials are valid, go to login
-                if (response.response?.statusCode == 200) {
+                if (response.response?.statusCode == 200 && response.description != "SUCCESS: The account is already registered.") {
                     // Go to menu
                     self.performSegue(withIdentifier: "Login", sender: self)
                 }

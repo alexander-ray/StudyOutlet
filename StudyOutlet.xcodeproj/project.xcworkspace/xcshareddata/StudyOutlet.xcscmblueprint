@@ -1,0 +1,212 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9838DCE56EEECEC86FA4A8D8D031383AFB5C761A+++399CBCB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "789252EF81C502A43EF1153AAFB885D64C59FEBD+++7DDD77E" : 9223372036854775807,
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++E35D020" : 9223372036854775807,
+    "7E7C1062562B886ABFA1C65C1E929E1339657116+++F42A2CE" : 9223372036854775807,
+    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC+++D81F785" : 9223372036854775807,
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++43899C2" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++932EDC9" : 9223372036854775807,
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++5972D9C" : 9223372036854775807,
+    "9C479842BAB37E5A02B52F0D8BB690041F1A927F+++89440FF" : 9223372036854775807,
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++9055DAA" : 9223372036854775807,
+    "9948E95A70F754B78E92114BF205DC946294AF5D+++52A3104" : 9223372036854775807,
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++D124174" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++6B0459E" : 9223372036854775807,
+    "013355313FF9FF2B55EA1241A5D12353638D9AC3+++B98DD6E" : 9223372036854775807,
+    "07D38DC615E8ADA07E68B7DA8DD8A2654638A334+++42EC2E7" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++FAA2D28" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++13A365D" : 9223372036854775807,
+    "0A2CDB7EE0CB08CFB1496AAF2E05A8B2023B6C50+++B41CBB2" : 9223372036854775807,
+    "9838DCE56EEECEC86FA4A8D8D031383AFB5C761A+++399CBCB" : 9223372036854775807,
+    "6400345F86F53D4096DD633F09AAE772FA6A202B+++334B3CD" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++ADC0B81" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++97980C0" : 9223372036854775807,
+    "6D09577DC770D433CEBE622BD4B45C8CF6CB8CCC+++07D61E4" : 9223372036854775807,
+    "65880DAFEE5F57D1D1C181560E763EECFD96B06D+++44E215F" : 9223372036854775807,
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++4E4E0DB" : 9223372036854775807,
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++AAAFFD1" : 9223372036854775807,
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++242FBFA" : 9223372036854775807,
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++0450E1C" : 9223372036854775807,
+    "CADB2473D823C4B67E031AA19BD5C58C5C0C5C2C+++A47839D" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4AD5D267-6373-4504-9607-654E3DCFFB18",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "789252EF81C502A43EF1153AAFB885D64C59FEBD+++7DDD77E" : "StudyOutlet\/.build\/checkouts\/clibressl.git-4924093653370840509\/",
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++E35D020" : "StudyOutlet\/.build\/checkouts\/path-indexable.git-6101080875983074629\/",
+    "7E7C1062562B886ABFA1C65C1E929E1339657116+++F42A2CE" : "StudyOutlet\/.build\/checkouts\/Turnstile.git-2443676010155639616\/",
+    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC+++D81F785" : "StudyOutlet\/.build\/checkouts\/Jay.git--595626396716718175\/",
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++43899C2" : "StudyOutlet\/.build\/checkouts\/console.git--2431895819212044213\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++932EDC9" : "StudyOutlet\/.build\/checkouts\/vapor.git-5492988889259800272\/",
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++5972D9C" : "StudyOutlet\/.build\/checkouts\/path-indexable.git-6101080875983074629\/",
+    "9C479842BAB37E5A02B52F0D8BB690041F1A927F+++89440FF" : "StudyOutlet\/.build\/checkouts\/socks.git--8001262774462276871\/",
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++9055DAA" : "StudyOutlet\/.build\/checkouts\/mysql-driver.git--8170272045732294678\/",
+    "9948E95A70F754B78E92114BF205DC946294AF5D+++52A3104" : "StudyOutlet\/.build\/checkouts\/json.git-9153249592855998091\/",
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++D124174" : "StudyOutlet\/.build\/checkouts\/mysql-provider--8480005064249409001\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++6B0459E" : "StudyOutlet\/.build\/checkouts\/vapor.git-5492988889259800272\/",
+    "013355313FF9FF2B55EA1241A5D12353638D9AC3+++B98DD6E" : "StudyOutlet\/.build\/checkouts\/tls.git-2678149690400510061\/",
+    "07D38DC615E8ADA07E68B7DA8DD8A2654638A334+++42EC2E7" : "StudyOutlet\/.build\/checkouts\/crypto.git-7980259129511365902\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++FAA2D28" : "StudyOutlet\/.build\/checkouts\/vapor.git-5492988889259800272\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++13A365D" : "StudyOutlet\/.build\/checkouts\/routing.git-5366657101075133678\/",
+    "0A2CDB7EE0CB08CFB1496AAF2E05A8B2023B6C50+++B41CBB2" : "StudyOutlet\/.build\/checkouts\/vapor-jwt.git--4706947206432249112\/",
+    "9838DCE56EEECEC86FA4A8D8D031383AFB5C761A+++399CBCB" : "StudyOutlet\/",
+    "6400345F86F53D4096DD633F09AAE772FA6A202B+++334B3CD" : "StudyOutlet\/.build\/checkouts\/leaf.git-9164445114487378533\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++ADC0B81" : "StudyOutlet\/.build\/checkouts\/vapor.git-5492988889259800272\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++97980C0" : "StudyOutlet\/.build\/checkouts\/core.git-9210800844849382486\/",
+    "6D09577DC770D433CEBE622BD4B45C8CF6CB8CCC+++07D61E4" : "StudyOutlet\/.build\/checkouts\/polymorphic.git--4354167031091999056\/",
+    "65880DAFEE5F57D1D1C181560E763EECFD96B06D+++44E215F" : "StudyOutlet\/.build\/checkouts\/fluent.git-6251908308727715749\/",
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++4E4E0DB" : "StudyOutlet\/.build\/checkouts\/mysql.git-1890032512239690518\/",
+    "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++AAAFFD1" : "StudyOutlet\/.build\/checkouts\/node.git-9175390252000121167\/",
+    "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++242FBFA" : "StudyOutlet\/.build\/checkouts\/mysql-provider.git-8249391725535204749\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++0450E1C" : "StudyOutlet\/.build\/checkouts\/engine.git-3311994267206676365\/",
+    "CADB2473D823C4B67E031AA19BD5C58C5C0C5C2C+++A47839D" : "StudyOutlet\/.build\/checkouts\/multipart.git-4210556629793786970\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "StudyOutlet",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "StudyOutlet.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/tls.git-2678149690400510061",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "013355313FF9FF2B55EA1241A5D12353638D9AC3+++B98DD6E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/crypto.git-7980259129511365902",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "07D38DC615E8ADA07E68B7DA8DD8A2654638A334+++42EC2E7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/vapor-jwt.git--4706947206432249112",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0A2CDB7EE0CB08CFB1496AAF2E05A8B2023B6C50+++B41CBB2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/engine.git-3311994267206676365",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++0450E1C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/routing.git-5366657101075133678",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++13A365D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/vapor.git-5492988889259800272",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++6B0459E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/engine.git-3311994267206676365",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++932EDC9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/core.git-9210800844849382486",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++97980C0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/core.git-9210800844849382486",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++ADC0B81"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/routing.git-5366657101075133678",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3+++FAA2D28"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/leaf.git-9164445114487378533",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6400345F86F53D4096DD633F09AAE772FA6A202B+++334B3CD"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/fluent.git-6251908308727715749",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "65880DAFEE5F57D1D1C181560E763EECFD96B06D+++44E215F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/polymorphic.git--4354167031091999056",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6D09577DC770D433CEBE622BD4B45C8CF6CB8CCC+++07D61E4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/mysql-provider.git-8249391725535204749",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++242FBFA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/console.git--2431895819212044213",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++43899C2"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/mysql.git-1890032512239690518",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++4E4E0DB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/mysql-driver.git--8170272045732294678",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++9055DAA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/mysql-provider--8480005064249409001",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "748C9296F4CFA6FB6918A0C73ECFD0DCCA1E2109+++D124174"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/clibressl.git-4924093653370840509",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "789252EF81C502A43EF1153AAFB885D64C59FEBD+++7DDD77E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/Turnstile.git-2443676010155639616",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7E7C1062562B886ABFA1C65C1E929E1339657116+++F42A2CE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/Jay.git--595626396716718175",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC+++D81F785"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/alexander-ray\/StudyOutlet.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9838DCE56EEECEC86FA4A8D8D031383AFB5C761A+++399CBCB"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/json.git-9153249592855998091",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9948E95A70F754B78E92114BF205DC946294AF5D+++52A3104"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/socks.git--8001262774462276871",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9C479842BAB37E5A02B52F0D8BB690041F1A927F+++89440FF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/multipart.git-4210556629793786970",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CADB2473D823C4B67E031AA19BD5C58C5C0C5C2C+++A47839D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/node.git-9175390252000121167",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++5972D9C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/node.git-9175390252000121167",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++AAAFFD1"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "\/Users\/alexray\/Dropbox\/CUSpring2017\/Software\/StudyOutlet\/StudyOutlet\/.build\/repositories\/path-indexable.git-6101080875983074629",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EE0211841CDBC942EFB5905580DF4AA57B5992F6+++E35D020"
+    }
+  ]
+}
