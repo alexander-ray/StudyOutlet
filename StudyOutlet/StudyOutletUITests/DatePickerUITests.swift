@@ -56,7 +56,22 @@ class DatePickerUITests: XCTestCase {
         // Goes to main menu
         XCTAssert(app.images["GRE_Title.png"].exists)
     }
-    
+
+    // Another "good" input 
+    // Should continue to main menu
+    func testPositive2() {
+        let updateButton = app.buttons["UpdateButton"]
+        // Good date
+        app.pickerWheels.element(boundBy: 0).adjust(toPickerWheelValue: "May 30")
+        app.pickerWheels.element(boundBy: 1).adjust(toPickerWheelValue: "6")
+        app.pickerWheels.element(boundBy: 2).adjust(toPickerWheelValue: "30")
+        app.pickerWheels.element(boundBy: 3).adjust(toPickerWheelValue: "AM")
+
+        updateButton.tap()
+        // Goes to main menu
+        XCTAssert(app.images["GRE_Title.png"].exists)
+    }
+
     func testNegative1() {
         let updateButton = app.buttons["UpdateButton"]
         
