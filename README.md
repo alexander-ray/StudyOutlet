@@ -8,4 +8,8 @@
 * Add any other user attributes we think we need
 ### Frontend
 * Apply layout constraints to app to reduce sizing inconsistancies
+* Add page for question mark
+* Add page for review by fields
+* Add page for missed problems
+* Add popup for incorrect username/password
 
