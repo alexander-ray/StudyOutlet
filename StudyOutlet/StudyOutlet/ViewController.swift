@@ -29,6 +29,7 @@ class ViewController: UIViewController
 //        CountDown.text = String(dDate) + " Days Until next Test"
 //    }
 
+    @IBOutlet weak var MissedProblemsButton: UIButton!
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -49,6 +50,9 @@ class ViewController: UIViewController
     @IBAction func ToCEMenu(_ sender: Any)
     {
         performSegue(withIdentifier: "ShowCEMenu", sender: self)
+    }
+    @IBAction func MissedProblemsButton(_ sender: UIButton) {
+        performSegue(withIdentifier: "MissedProblemButton", sender: self)
     }
     @IBAction func Review(_ sender: UIButton) {
         performSegue(withIdentifier: "Review to Coming Soon", sender: self)
