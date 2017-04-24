@@ -5,21 +5,29 @@ import Foundation
 
 struct User: Model {
 	
+
+	//type initialization for User's members	
 	var id: Node?
 	let username: String
 	let password: String
 
+	
+	//constructor setting username and password for a user as parameters
 	init(username: String, password String){
 		self.username = username
 		self.password = password
 	}
 
+	//function that pulls info from database
 	init(node: Node, in context: Context) throws{
+		//use "try" in case info not available
 		id = try node.extract("id")
 		username = try node.extract("username")
 		password = try node.extract("password")
 	}
-
+	
+	//Inserting into database
+	//Fairly certain it's called when new user created
 	func makeNode(context: Context) throws -> Node {
 		return try Node(node: [
 			"id": id,
@@ -28,6 +36,7 @@ struct User: Model {
 		])
 	}
 	
+	//in case there is no table already present
 	static fun prepare(_ databse: Database) throws {
 		try database.create("users") { users in
 			users.id()
@@ -35,6 +44,7 @@ struct User: Model {
 			users.string("password")
 		}
 	}
+	//Deletes a table if needed
 	static func revert(_ database: Database) throws{
 		try database.delete("users")
 	}
