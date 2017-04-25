@@ -9,12 +9,15 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
+// View controller for registration page
 class RegisterViewController: UIViewController {
+    // Outlets in view
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
     
+    // Load view
     override func viewDidLoad() {
         super.viewDidLoad()
     }

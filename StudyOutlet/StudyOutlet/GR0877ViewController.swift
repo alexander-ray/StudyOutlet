@@ -10,7 +10,7 @@ import UIKit
 import GameKit // For shuffle
 
 class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
+    // MARK: Setup
     // Get number of minutes and questions from user defaults
     var minutes = defaults.integer(forKey: "test_length")
     var numQuestions = defaults.integer(forKey: "num_questions")
@@ -84,9 +84,9 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
         alertController.addAction(backAction)
         alertController.addAction(stopAction)
-        self.present(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil) // Show alert
     }
-    
+    // On submit button press
     @IBAction func submit(_ sender: UIButton) {
         // If correct
         if (currentAnswer == test.questionArray[questionIndex].answer) {
@@ -98,10 +98,11 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             else {
                 presentCorrectAlert()
             }
-            alreadyMarkedIncorrect = false
+            alreadyMarkedIncorrect = false // Reset
         }
         // If not correct
         else {
+            // If not incremented already, increment
             if (!alreadyMarkedIncorrect) {
                 incorrectQuestions += 1
                 alreadyMarkedIncorrect = true
@@ -116,7 +117,6 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func numberOfComponents(in: UIPickerView) -> Int{
         return 1
     }
-    
     // returns the # of rows in each component..
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
         return answers.count
@@ -176,6 +176,8 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             if (self.numQuestions > 0) {
                 let question = self.test.questionArray[0].question
                 self.imageView.image = question
+                
+                // Unhide button after images have been loaded
                 self.StartImageOutlet.isHidden = false
                 self.StartButtonOutlet.isHidden = false
             }
@@ -185,13 +187,16 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     // Counter function for timer
     func counter()
     {
+        // Update timer
         minutes -= 1
         countMinute.text = String(minutes) + " min"
         
+        // If complete
         if (minutes == 0)
         {
             // If ran out of time, alert
             timer.invalidate()
+            // Alert user
             let alertController = UIAlertController(title: "", message: "You ran out of time!", preferredStyle: UIAlertControllerStyle.alert)
             let returnAction = UIAlertAction(title: "Return to menu", style: UIAlertActionStyle.default) {
                 (result : UIAlertAction) -> Void in
@@ -214,18 +219,8 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
 
     }
-    
-    // Unused at the moment
-    /*func previousQuestion() {
-        if (questionIndex > 0)
-        {
-            questionIndex = questionIndex - 1
-            let question = self.test.questionArray[self.questionIndex].question
-            self.imageView.image = question
-        }
-    }*/
-    
-    
+
+    // MARK: Alerts
     // Various alert setup
     func presentCorrectAlert() {
         // Set up "invalid date" alert
@@ -238,7 +233,6 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         alertController.addAction(action)
         self.present(alertController, animated: true, completion: nil)
     }
-    
     func presentIncorrectAlert() {
         // Set up "invalid date" alert
         let alertController = UIAlertController(title: "Incorrect!", message: "Please try again.", preferredStyle: UIAlertControllerStyle.alert)
@@ -249,7 +243,6 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         alertController.addAction(okAction)
         self.present(alertController, animated: true, completion: nil)
     }
-    
     func presentFinalAlert() {
         let numCorrectQuestions = numQuestions - incorrectQuestions
         let message = "You've completed this practice test! You answered " + String(numCorrectQuestions) + "/" + String(numQuestions) + " correctly."
@@ -264,57 +257,3 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         self.present(alertController, animated: true, completion: nil)
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
