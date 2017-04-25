@@ -58,9 +58,17 @@ class LoginViewController: UIViewController {
                         self.performSegue(withIdentifier: "MainMenu", sender: self)
                     }
                     else {
-                        self.usernameField.text = ""
-                        self.usernameField.becomeFirstResponder()
-                        self.passwordField.text = ""
+                        // Set up "invalid date" alert
+                        let alert = UIAlertController(title: "Incorrect Login Credentials", message: "Please try again", preferredStyle: UIAlertControllerStyle.alert)
+                        let okAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.default)
+                        {
+                            (result : UIAlertAction) -> Void in
+                            self.usernameField.text = ""
+                            self.usernameField.becomeFirstResponder()
+                            self.passwordField.text = ""
+                        }
+                        alert.addAction(okAction)
+                        self.present(alert, animated: true, completion: nil)
                     }
                 }
                 catch let error as NSError {

@@ -114,12 +114,30 @@
                                     <segue destination="QYM-tq-BFz" kind="show" identifier="ShowCEMenu" id="mdD-oa-vfE"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gp-lx-jsM">
+                                <rect key="frame" x="16" y="438" width="343" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="Review:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bXA-hE-4Vp"/>
+                                    <segue destination="BcQ-v4-Fhh" kind="show" identifier="Review to Coming Soon" id="Myi-2n-giA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjM-Ux-Rfb">
+                                <rect key="frame" x="16" y="515" width="343" height="57"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="MissedProblemsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gt1-a6-WBr"/>
+                                    <segue destination="BcQ-v4-Fhh" kind="show" identifier="MissedProblemsButton" id="GLY-lt-18D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="CountDown" destination="W1k-jh-8se" id="hdy-Rz-mwY"/>
+                        <outlet property="MissedProblemsButton" destination="RjM-Ux-Rfb" id="30V-la-xMG"/>
+                        <outlet property="ReviewButton" destination="9Gp-lx-jsM" id="YKb-yn-TXM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -733,8 +751,9 @@
         <image name="right.png" width="874" height="1198"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FTg-aE-AzZ"/>
         <segue reference="i1r-dF-wiz"/>
-        <segue reference="kIP-v6-8lV"/>
+        <segue reference="NEi-9r-0Fa"/>
+        <segue reference="tl5-Yr-ZJA"/>
+        <segue reference="GLY-lt-18D"/>
     </inferredMetricsTieBreakers>
 </document>
