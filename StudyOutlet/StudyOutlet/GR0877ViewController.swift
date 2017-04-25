@@ -150,18 +150,6 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         let days = Helper.numDaysBeforeTest(testDate: date)
         CountDown.text = String(days) + " Days Until next Test"
         
-        // Get questions from test model
-        test.getQuestions() { arr in
-            let unshuffledArray = arr!
-            // http://stackoverflow.com/questions/37843647/shuffle-array-swift-3
-            self.test.questionArray = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: unshuffledArray) as! [Test.question]
-            // Set first question image if possible
-            if (self.numQuestions > 0) {
-                let question = self.test.questionArray[0].question
-                self.imageView.image = question
-            }
-        }
-        
         // Button and input setup
         imageOutlet.isHidden = true
         IndexOutlet.isHidden = true
@@ -171,11 +159,27 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         previousOutlet.isHidden = true
         StopImageOutlet.isHidden = true
         StopButtonOutlet.isHidden = true
+        StartImageOutlet.isHidden = true
+        StartButtonOutlet.isHidden = true
         
         submitButton.isHidden = true
         answerPicker.isHidden = true
         answerPicker.delegate = self
-        answerPicker.dataSource = self        
+        answerPicker.dataSource = self
+        
+        // Get questions from test model
+        test.getQuestions() { arr in
+            let unshuffledArray = arr!
+            // http://stackoverflow.com/questions/37843647/shuffle-array-swift-3
+            self.test.questionArray = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: unshuffledArray) as! [Test.question]
+            // Set first question image if possible
+            if (self.numQuestions > 0) {
+                let question = self.test.questionArray[0].question
+                self.imageView.image = question
+                self.StartImageOutlet.isHidden = false
+                self.StartButtonOutlet.isHidden = false
+            }
+        }
     }
 
     // Counter function for timer
