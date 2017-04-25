@@ -6,5 +6,4 @@ class PasswordValidator: ValidationSuite {
     let range = value.range(of: "^(?=.*[0-9])(?=.*[A-Z])", options: .regularExpression) //set valid password range with regular expression
       throw error(with: value)
     }
-  }
 }
