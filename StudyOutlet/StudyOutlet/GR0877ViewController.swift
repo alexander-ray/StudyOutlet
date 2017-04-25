@@ -17,6 +17,8 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
 
     var incorrectQuestions = 0;
     
+    var alreadyMarkedIncorrect = false;
+    
     // Declarations
     var timer = Timer()
     var test = Test(testName: "GR0877")
@@ -96,9 +98,14 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
             else {
                 presentCorrectAlert()
             }
+            alreadyMarkedIncorrect = false
         }
         // If not correct
         else {
+            if (!alreadyMarkedIncorrect) {
+                incorrectQuestions += 1
+                alreadyMarkedIncorrect = true
+            }
             presentIncorrectAlert()
         }
     }
@@ -240,8 +247,10 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     func presentFinalAlert() {
+        let numCorrectQuestions = numQuestions - incorrectQuestions
+        let message = "You've completed this practice test! You answered " + String(numCorrectQuestions) + "/" + String(numQuestions) + " correctly."
         // Set up "invalid date" alert
-        let alertController = UIAlertController(title: "Correct!", message: "You've completed this test!.", preferredStyle: UIAlertControllerStyle.alert)
+        let alertController = UIAlertController(title: "Correct!", message: message, preferredStyle: UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title: "Finish", style: UIAlertActionStyle.default)
         {
             (result : UIAlertAction) -> Void in
