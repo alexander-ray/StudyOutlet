@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GameKit // For shuffle
 
 class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -14,6 +15,8 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     var minutes = defaults.integer(forKey: "test_length")
     var numQuestions = defaults.integer(forKey: "num_questions")
 
+    var incorrectQuestions = 0;
+    
     // Declarations
     var timer = Timer()
     var test = Test(testName: "GR0877")
@@ -142,7 +145,9 @@ class GR0877ViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         // Get questions from test model
         test.getQuestions() { arr in
-            self.test.questionArray = arr!
+            let unshuffledArray = arr!
+            // http://stackoverflow.com/questions/37843647/shuffle-array-swift-3
+            self.test.questionArray = GKRandomSource.sharedRandom().arrayByShufflingObjects(in: unshuffledArray) as! [Test.question]
             // Set first question image if possible
             if (self.numQuestions > 0) {
                 let question = self.test.questionArray[0].question
