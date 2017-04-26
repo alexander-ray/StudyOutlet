@@ -51,9 +51,7 @@ class ViewController: UIViewController
     {
         performSegue(withIdentifier: "ShowCEMenu", sender: self)
     }
-    @IBAction func MissedProblemsButton(_ sender: UIButton) {
-        performSegue(withIdentifier: "MissedProblemButton", sender: self)
-    }
+   
     @IBAction func Review(_ sender: UIButton) {
         performSegue(withIdentifier: "Review to Coming Soon", sender: self)
     }
