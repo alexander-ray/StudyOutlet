@@ -8,26 +8,25 @@
 
 import UIKit
 
+// View controller for coming soon page
 class ComingSoonViewController: UIViewController {
 
+    // MARK: Outlets
     @IBOutlet weak var CountDown: UILabel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
-        let days = Helper.numDaysBeforeTest(testDate: date)
-        CountDown.text = String(days) + " Days Until next Test"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    
+    // MARK: Actions
     @IBAction func BackOne(_ sender: Any)
     {
         performSegue(withIdentifier: "Back1", sender: self)
+    }
+
+    // View did load
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Setup date
+        let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
+        let days = Helper.numDaysBeforeTest(testDate: date)
+        CountDown.text = String(days) + " Days Until next Test"
     }
 }

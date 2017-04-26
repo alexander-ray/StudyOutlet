@@ -8,12 +8,15 @@
 
 import UIKit
 
+// View controller for settings view
 class SettingViewController: UIViewController
 {
+    // MARK: Outlets
     @IBOutlet weak var CountDown: UILabel!
     @IBOutlet weak var logoutButton: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     
+    // MARK: Actions
     @IBAction func UpdateDate(_ sender: AnyObject)
     {
         let currentDate = Date()
@@ -46,35 +49,20 @@ class SettingViewController: UIViewController
         defaults.set("-1", forKey: "api_access_key")
         performSegue(withIdentifier: "BackToLogin", sender: self)
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        CountDown.text = String(dDate) + " Days Until next Test"
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func BackToMenu(_ sender: Any)
     {
         performSegue(withIdentifier: "BackToMenu", sender: self)
     }
-    
 
-    /*
-    // MARK: - Navigation
+    // Loading view
+    override func viewDidLoad() {
+        super.viewDidLoad()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Set current date, calculate number of days until date
+        let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
+        let days = Helper.numDaysBeforeTest(testDate: date)
+        CountDown.text = String(days) + " Days Until next Test"
     }
-    */
-
 }
 
 extension Date {

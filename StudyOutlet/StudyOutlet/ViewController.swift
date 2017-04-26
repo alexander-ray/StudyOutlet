@@ -12,36 +12,32 @@ var dDate = 0
 
 class ViewController: UIViewController
 {
-    
+    // MARK: Outlets
+    @IBOutlet weak var MissedProblemsButton: UIButton!
     @IBOutlet weak var CountDown: UILabel!
     @IBOutlet weak var ReviewButton: UIButton!
     
+    // Load view
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        // Set current date, calculate number of days until date
         let date = (defaults.object(forKey: "next_test_date") ?? Date()) as! Date
         let days = Helper.numDaysBeforeTest(testDate: date)
         CountDown.text = String(days) + " Days Until next Test"
     }
-    
-//    override func viewDidAppear(_ animated: Bool)
-//    {
-//        CountDown.text = String(dDate) + " Days Until next Test"
-//    }
 
-    @IBOutlet weak var MissedProblemsButton: UIButton!
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
+    // MARK: Actions
+    // Segues to other pages
     @IBAction func Setting(_ sender: Any)
     {
         performSegue(withIdentifier: "ShowSetting", sender: self)
     }
-    
-    
     @IBAction func ToOPE(_ sender: Any)
     {
         performSegue(withIdentifier: "ToOPE", sender: self)
@@ -55,7 +51,5 @@ class ViewController: UIViewController
     @IBAction func Review(_ sender: UIButton) {
         performSegue(withIdentifier: "Review to Coming Soon", sender: self)
     }
-    
-    
 }
 
