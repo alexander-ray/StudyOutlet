@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eni-Yn-hkn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eni-Yn-hkn">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -115,19 +115,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Gp-lx-jsM">
-                                <rect key="frame" x="16" y="438" width="343" height="57"/>
+                                <rect key="frame" x="16" y="438" width="343" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="Review:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bXA-hE-4Vp"/>
                                     <segue destination="BcQ-v4-Fhh" kind="show" identifier="Review to Coming Soon" id="Myi-2n-giA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RjM-Ux-Rfb">
-                                <rect key="frame" x="16" y="515" width="343" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="MissedProblemsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gt1-a6-WBr"/>
-                                    <segue destination="BcQ-v4-Fhh" kind="show" identifier="MissedProblemsButton" id="GLY-lt-18D"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -136,7 +128,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="CountDown" destination="W1k-jh-8se" id="hdy-Rz-mwY"/>
-                        <outlet property="MissedProblemsButton" destination="RjM-Ux-Rfb" id="30V-la-xMG"/>
                         <outlet property="ReviewButton" destination="9Gp-lx-jsM" id="YKb-yn-TXM"/>
                     </connections>
                 </viewController>
@@ -751,9 +742,9 @@
         <image name="right.png" width="874" height="1198"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="i1r-dF-wiz"/>
         <segue reference="NEi-9r-0Fa"/>
         <segue reference="tl5-Yr-ZJA"/>
-        <segue reference="GLY-lt-18D"/>
+        <segue reference="Myi-2n-giA"/>
+        <segue reference="i1r-dF-wiz"/>
     </inferredMetricsTieBreakers>
 </document>
