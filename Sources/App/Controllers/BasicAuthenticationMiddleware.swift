@@ -3,7 +3,7 @@
 //  VaporAuth
 //
 //  Created by Edward Jiang on 10/3/16.
-//
+//  See github
 //
 import Vapor
 import HTTP

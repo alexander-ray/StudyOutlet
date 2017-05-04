@@ -13,30 +13,29 @@ struct User: Model {
     // Declarations
     var id: Node?
     var email = ""
-    //var username: String
     var password = ""
     var accessKey: String
-    //var apiKeyID = URandom().secureToken
-    //var apiKeySecret = URandom().secureToken
     
     // For fluent
     var exists: Bool = false
     
     // Initializer
     init(credentials: UsernamePassword) throws {
-        //self.username = credentials.username
+        // Set email, using emailvalidator
         let validatedEmail: Valid<EmailValidator> = try credentials.username.validated()
         self.email = validatedEmail.value
         
+        // Set password, using passwordvalidator
         let validatedPassword: Valid<PasswordValidator> = try credentials.password.validated()
         self.password = BCrypt.hash(password: validatedPassword.value)
         
+        // Generate access key
         self.accessKey = URandom().secureToken // Create token randomly
     }
     
+    // Normal init function, using node object
     init(node: Node, in context: Context) throws {
         id = try node.extract("id")
-        //username = try node.extract("username")
         email = try node.extract("email")
         password = try node.extract("password")
         accessKey = try node.extract("access_key")
@@ -46,13 +45,13 @@ struct User: Model {
     func makeNode(context: Context) throws -> Node {
         return try Node(node: [
             "id": id,
-            //"username": username,
             "email": email,
             "password": password,
             "access_key": accessKey,
             ])
     }
-    
+   
+    // Get access key to return
     static func getAccessKey(email: String) throws -> String {
         var user: User?
         user = try User.query().filter("email", email).first() // Try to find username in database
@@ -60,6 +59,7 @@ struct User: Model {
     }
     
     // Database setup functions
+    // From vapor
     static func prepare(_ database: Database) throws {
         try database.create("users") { users in
             users.id()

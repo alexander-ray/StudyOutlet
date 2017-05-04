@@ -12,13 +12,6 @@ import Turnstile
 import Auth
 
 final class UserController {
-    /*func addRoutes(drop: Droplet) {
-        let user = drop.grouped("user")
-        user.post("register", handler: register)
-        user.get("users", handler: getUsers)
-        user.post("login", handler: login)
-    }*/
-    
     // Register user
     func register(request: Request) throws -> ResponseRepresentable {
         // Get username and password from url
@@ -59,7 +52,6 @@ final class UserController {
         let users = try User.all().makeNode()
         let usersDictionary = ["users": users]
         return try JSON(node: usersDictionary)
-    }
-    
+    } 
 }
 

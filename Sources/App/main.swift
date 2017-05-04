@@ -1,3 +1,4 @@
+// Imports
 import Vapor
 import VaporMySQL
 import Auth
@@ -8,12 +9,15 @@ import Fluent
 import Cookies
 import Foundation
 
+// Creating drop, adding mysql provider
 let drop = Droplet()
 try drop.addProvider(VaporMySQL.Provider.self)
 
+// Add models
 drop.preparations.append(Question.self)
 drop.preparations.append(User.self)
-// Custom cookie
+
+// Custom cookie for session management
 let auth = AuthMiddleware(user: User.self){ value in
     return Cookie(
         name: "alex_cookie",
@@ -25,6 +29,7 @@ let auth = AuthMiddleware(user: User.self){ value in
 }
 drop.middleware.append(auth)
 
+// For access token middleware
 let protect = ProtectMiddleware(error: Abort.custom(status: .unauthorized, message: "Unauthorized"))
 let userController = UserController()
 let questionController = QuestionConroller()
